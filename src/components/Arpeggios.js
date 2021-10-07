@@ -137,9 +137,9 @@ function Arpeggio() {
         let notes = [];
         notes.push(note1, note2, note3)
     
-        // notes[0].load()
-        // notes[1].load()
-        // notes[2].load()
+        notes[0].load()
+        notes[1].load()
+        notes[2].load()
     
         //  notes[0].muted = true;
         //  notes[1].muted = true;
@@ -160,7 +160,7 @@ function Arpeggio() {
                     notes[i].play()
                     
                     
-                }, i * 300);
+                }, i * 400);
             }
             
             
@@ -177,9 +177,9 @@ function Arpeggio() {
         let notes = [];
         notes.push(note1, note2, note3)
     
-        // notes[0].load()
-        // notes[1].load()
-        // notes[2].load()
+        notes[0].load()
+        notes[1].load()
+        notes[2].load()
     
         // notes[0].muted = true;
         // notes[1].muted = true;
@@ -200,7 +200,7 @@ function Arpeggio() {
                     notes[i].play()
                     
                     
-                }, i * 300);
+                }, i * 400);
             }
             
             

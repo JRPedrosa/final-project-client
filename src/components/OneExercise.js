@@ -100,24 +100,45 @@ function OneExercise(props) {
       }
       
       console.log(intervals, direction, randInterval)
-      play();
+      play(false);
   }
 
 
 
-  function play() {
+  function play(repeat) {
 
-    let note3 = new Audio(piano[rand1])
-    let note4 = new Audio(piano[rand2])
+    if (repeat) {
+      let note3 = new Audio(piano[rand1])
+      let note4 = new Audio(piano[rand2])
+  
+      note3.load()
+      note4.load()
+  
+      note3.play()
+      setTimeout(function(){
+        note3.pause();
+        note4.play(); 
+       }, 1000);
 
-    note3.load()
-    note4.load()
+    } else {
+      let note3 = new Audio(piano[rand1])
+      let note4 = new Audio(piano[rand2])
+  
+      note3.load()
+      note4.load()
+  
+      setTimeout(function(){
+        
+        note3.play()
+        setTimeout(function(){
+          note3.pause();
+          note4.play(); 
+         }, 800);
+       }, 500);
 
-    note3.play()
-    setTimeout(function(){
-      note3.pause();
-      note4.play(); 
-     }, 1000);
+
+    }
+
     
 
     console.log(`Interval: ${randInterval} - Rand1: ${rand1} - rand2: ${rand2} `)
@@ -170,7 +191,7 @@ function OneExercise(props) {
             <div></div>
 
           <button onClick={() => randomize()}>Play New</button>
-          <button onClick={() => play()}>Repeat</button>
+          <button onClick={() => play(true)}>Repeat</button>
 
           <div></div>
             <div></div>

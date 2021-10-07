@@ -73,7 +73,7 @@ function Interval() {
       randInterval = possibleIntervals[Math.floor(Math.random() * possibleIntervals.length)]
       rand1 = Math.floor(Math.random() * 24)
       rand2 = rand1 + randInterval
-      play();
+      play(false);
   }
 
 
@@ -82,20 +82,45 @@ function Interval() {
   // }, [test])
 
 
-   function play() {
+   function play(repeat) {
 
-    note1 = new Audio(piano[rand1])
-    note2 = new Audio(piano[rand2])
+    if (repeat) {
+      
+      note1 = new Audio(piano[rand1])
+      note2 = new Audio(piano[rand2])
+  
+      note1.load()
+      note2.load()
+  
+      note1.play()
+      setTimeout(function(){
+         note1.pause();
+          //note1.play()
+        note2.play(); 
+        }, 800);
+    } else {
 
-    note1.load()
-    note2.load()
+      note1 = new Audio(piano[rand1])
+      note2 = new Audio(piano[rand2])
+  
+      note1.load()
+      note2.load()
+  
 
-    note1.play()
-    setTimeout(function(){
-       note1.pause();
-        //note1.play()
-      note2.play(); 
-      }, 800);
+      setTimeout(function(){
+        
+        note1.play()
+        setTimeout(function(){
+           note1.pause();
+            //note1.play()
+          note2.play(); 
+          }, 800);
+
+       }, 500);
+
+
+    }
+
     
 
     // console.log(`Interval: ${randInterval} - Rand1: ${rand1} - rand2: ${rand2} `)
@@ -151,7 +176,7 @@ function Interval() {
 
                 <button onClick={() => randomize()}>Play New</button>
 
-                <button onClick={() => play()}>Repeat</button>
+                <button onClick={() => play(true)}>Repeat</button>
               
               <div></div>
               <div></div>

@@ -120,44 +120,84 @@ function OneExerciseScale(props) {
       };
 
 
-      play();
+      play(false);
   }
 
 
 
-  function play() {
+  function play(repeat) {
 
-    console.log(`randScale: ${randScale} - Rand1: ${rand1} `)
+    if (repeat) {
+      console.log(`randScale: ${randScale} - Rand1: ${rand1} `)
+  
+      let note1 = new Audio(piano[rand1])
+      let note2 = new Audio(piano[rand1 + randScale[0]])
+      let note3 = new Audio(piano[rand1 + randScale[1]])
+      let note4 = new Audio(piano[rand1 + randScale[2]])
+      let note5 = new Audio(piano[rand1 + randScale[3]])
+      let note6 = new Audio(piano[rand1 + randScale[4]])
+      let note7 = new Audio(piano[rand1 + randScale[5]])
+      let note8 = new Audio(piano[rand1 + randScale[6]])
+  
+      let notes = [];
+      notes.push(note1, note2, note3, note4, note5, note6, note7, note8)
+  
+      notes[0].load()
+      notes[1].load()
+      notes[2].load()
+      notes[3].load()
+      notes[4].load()
+      notes[5].load()
+      notes[6].load()
+      notes[7].load()
+  
+      for (let i = 0; i < 8; i++) {   
+          setTimeout(function(){
+              notes[i].play()
+              
+          }, i * 300);
+      }
 
-    let note1 = new Audio(piano[rand1])
-    let note2 = new Audio(piano[rand1 + randScale[0]])
-    let note3 = new Audio(piano[rand1 + randScale[1]])
-    let note4 = new Audio(piano[rand1 + randScale[2]])
-    let note5 = new Audio(piano[rand1 + randScale[3]])
-    let note6 = new Audio(piano[rand1 + randScale[4]])
-    let note7 = new Audio(piano[rand1 + randScale[5]])
-    let note8 = new Audio(piano[rand1 + randScale[6]])
+    } else {
 
-    let notes = [];
-    notes.push(note1, note2, note3, note4, note5, note6, note7, note8)
+      let note1 = new Audio(piano[rand1])
+      let note2 = new Audio(piano[rand1 + randScale[0]])
+      let note3 = new Audio(piano[rand1 + randScale[1]])
+      let note4 = new Audio(piano[rand1 + randScale[2]])
+      let note5 = new Audio(piano[rand1 + randScale[3]])
+      let note6 = new Audio(piano[rand1 + randScale[4]])
+      let note7 = new Audio(piano[rand1 + randScale[5]])
+      let note8 = new Audio(piano[rand1 + randScale[6]])
+  
+      let notes = [];
+      notes.push(note1, note2, note3, note4, note5, note6, note7, note8)
+  
+      notes[0].load()
+      notes[1].load()
+      notes[2].load()
+      notes[3].load()
+      notes[4].load()
+      notes[5].load()
+      notes[6].load()
+      notes[7].load()
+  
 
-    notes[0].load()
-    notes[1].load()
-    notes[2].load()
-    notes[3].load()
-    notes[4].load()
-    notes[5].load()
-    notes[6].load()
-    notes[7].load()
+      setTimeout(function(){
+       
+        for (let i = 0; i < 8; i++) {   
+            setTimeout(function(){
+                notes[i].play()
+                
+            }, i * 300);
+        }
+        
+    }, 1000);
 
-    for (let i = 0; i < 8; i++) {   
-        setTimeout(function(){
-            notes[i].play()
-            
-        }, i * 300);
+
     }
 
-    console.log(notes)
+
+    
   }
 
 
@@ -223,7 +263,7 @@ function OneExerciseScale(props) {
        
 
                 <button onClick={() => randomize()}>Play New</button>
-                <button onClick={() => play()}>Repeat</button>
+                <button onClick={() => play(true)}>Repeat</button>
 
             <div></div>
               <div></div>

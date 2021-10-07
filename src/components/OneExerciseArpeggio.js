@@ -120,36 +120,66 @@ function OneExerciseArpeggio(props) {
       };
 
 
-      play();
+      play(false);
   }
 
 
 
-  function play() {
+  function play(repeat) {
 
-    console.log(`randScale: ${randScale} - Rand1: ${rand1} `)
+    if (repeat) {
+      console.log(`randScale: ${randScale} - Rand1: ${rand1} `)
+  
+      let note1 = new Audio(piano[rand1])
+      let note2 = new Audio(piano[rand1 + randScale[0]])
+      let note3 = new Audio(piano[rand1 + randScale[1]])
+      
+  
+      let notes = [];
+      notes.push(note1, note2, note3)
+  
+      notes[0].load()
+      notes[1].load()
+      notes[2].load()
+      
+  
+      for (let i = 0; i < 3; i++) {   
+          setTimeout(function(){
+              notes[i].play()
+              
+          }, i * 300);
+      }
 
-    let note1 = new Audio(piano[rand1])
-    let note2 = new Audio(piano[rand1 + randScale[0]])
-    let note3 = new Audio(piano[rand1 + randScale[1]])
-    
+    } else {
 
-    let notes = [];
-    notes.push(note1, note2, note3)
+      let note1 = new Audio(piano[rand1])
+      let note2 = new Audio(piano[rand1 + randScale[0]])
+      let note3 = new Audio(piano[rand1 + randScale[1]])
+      
+  
+      let notes = [];
+      notes.push(note1, note2, note3)
+  
+      notes[0].load()
+      notes[1].load()
+      notes[2].load()
+      
+  
+      setTimeout(function(){
+        
+        for (let i = 0; i < 3; i++) {   
+            setTimeout(function(){
+                notes[i].play()
+                
+            }, i * 400);
+        }
+        
+    }, 1000);
 
-    notes[0].load()
-    notes[1].load()
-    notes[2].load()
-    
-
-    for (let i = 0; i < 3; i++) {   
-        setTimeout(function(){
-            notes[i].play()
-            
-        }, i * 300);
     }
 
-    console.log(notes)
+
+    
   }
 
 
@@ -215,7 +245,7 @@ function OneExerciseArpeggio(props) {
        
 
                 <button onClick={() => randomize()}>Play New</button>
-                <button onClick={() => play()}>Repeat</button>
+                <button onClick={() => play(true)}>Repeat</button>
 
             <div></div>
               <div></div>
