@@ -17,6 +17,9 @@ import { LoggedUserProvider } from "./context/loggedUser";
 import PrivateRoute from "./components/PrivateRoute";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Arpeggio from './components/Arpeggios';
+import CreateArpeggio from './components/createArpeggio';
+import OneExerciseArpeggio from './components/OneExerciseArpeggio';
 
 
 
@@ -60,8 +63,11 @@ function App() {
         <PrivateRoute exact path={"/exercises/:id"} component={OneExercise} />
         <Route exact path={"/scale"} component={Scale} />
         <PrivateRoute exact path={"/scales/:id"} component={OneExerciseScale} />
+        <Route exact path={"/arpeggio"} component={Arpeggio} />
+        <PrivateRoute exact path={"/arpeggios/:id"} component={OneExerciseArpeggio} />
         <PrivateRoute exact path={"/create-interval"} component={CreateInterval} />
         <PrivateRoute exact path={"/create-scales"} component={CreateScale} />
+        <PrivateRoute exact path={"/create-arpeggio"} component={CreateArpeggio} />
         <PrivateRoute path="/exercises" component={AllExercises} />
         <Route path="/signup" component={Signup} />
         <Route 

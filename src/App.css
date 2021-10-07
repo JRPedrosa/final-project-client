@@ -145,7 +145,9 @@ nav button:hover {
   width: 250px;
   align-self: center;
   padding-bottom: 5px;
-  border: 2px solid rgb(65, 65, 65)
+  border: 2px solid rgb(65, 65, 65);
+  /* position: relative;
+  left: 10px; */
 }
 
 .homeNot {
@@ -330,6 +332,7 @@ nav button:hover {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 .allText {
@@ -474,3 +477,16 @@ nav button:hover {
   75%  {text-shadow: 0 0 3px rgb(255, 0, 0);}
   100% {text-shadow: 0 0 1px rgb(255, 0, 0);}
 } */
+
+.allTextExer {
+  background-color: rgba(94, 94, 94, 0.829);
+  width: 800px;
+  
+  border-radius: 10px;
+  text-shadow: 0 0 4px rgb(0, 0, 0);
+  list-style-type: none;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  margin: 50px;
+}

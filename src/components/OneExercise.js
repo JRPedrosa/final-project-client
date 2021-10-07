@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { NavLink } from "react-router-dom";
 
 let rand1;
 let rand2;
@@ -111,6 +110,9 @@ function OneExercise(props) {
     let note3 = new Audio(piano[rand1])
     let note4 = new Audio(piano[rand2])
 
+    note3.load()
+    note4.load()
+
     note3.play()
     setTimeout(function(){
       note3.pause();
@@ -167,7 +169,7 @@ function OneExercise(props) {
             <div></div>
             <div></div>
 
-          <button onClick={() => randomize()}>Play New Interval</button>
+          <button onClick={() => randomize()}>Play New</button>
           <button onClick={() => play()}>Repeat</button>
 
           <div></div>

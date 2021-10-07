@@ -26,6 +26,13 @@ function NavBar({ loggedInUser, setCurrentLoggedInUser }) {
               Intervals
             </NavLink>
           </li>
+
+          <li>
+          <NavLink  className="navLinks" activeStyle={{ color: "red" }} exact to="/arpeggio">
+            Arpeggios
+          </NavLink>
+        </li>
+        
           <li>
             <NavLink  className="navLinks" activeStyle={{ color: "red" }} exact to="/scale">
               Scales
@@ -63,6 +70,14 @@ function NavBar({ loggedInUser, setCurrentLoggedInUser }) {
             Intervals
           </NavLink>
         </li>
+
+        <li>
+          <NavLink  className="navLinks" activeStyle={{ color: "red" }} exact to="/arpeggio">
+            Arpeggios
+          </NavLink>
+        </li>
+
+
         <li>
           <NavLink  className="navLinks" activeStyle={{ color: "red" }} exact to="/scale">
             Scales

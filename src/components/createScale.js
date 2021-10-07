@@ -1,13 +1,13 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
-import { LoggedUserConsumer, LoggedUserProvider } from "../context/loggedUser";
+import { LoggedUserConsumer } from "../context/loggedUser";
 import { toast } from "react-toastify";
 
 function CreateScale() {
   const [name, setName] = useState("");
   const history = useHistory();
-  // const [selected, setSelected] = useState([]);
+  
   const [majorScale, setMajorScale] = useState(false);
   const [minorScale, setMinorScale] = useState(false);
   const [dorian, setDorian] = useState(false);
@@ -78,8 +78,6 @@ const loggedInUser = useContext(LoggedUserConsumer)
       toast.error("Missing Fields");
     }
 
-
-    // setSelected([]);
   };
 
   return (

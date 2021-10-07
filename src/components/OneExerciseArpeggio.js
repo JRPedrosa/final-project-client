@@ -50,7 +50,7 @@ let piano = [
 
 
 
-function OneExerciseScale(props) {
+function OneExerciseArpeggio(props) {
 
   const [message, setMessage] = useState("");
   const [possibleScales, setPossibleScales] = useState([])
@@ -68,7 +68,7 @@ function OneExerciseScale(props) {
 
   useEffect(() => {
     async function getOneScaleExercise() {
-       const response = await axios.get(`${process.env.REACT_APP_SERVER_HOSTNAME}/scales/${props.match.params.id}`, { withCredentials: true});
+       const response = await axios.get(`${process.env.REACT_APP_SERVER_HOSTNAME}/arpeggios/${props.match.params.id}`, { withCredentials: true});
        setPossibleScales(response.data.possibleScales);
        setExerciseName(response.data.name)
     //    for (let i = 0; i < intervals.length; i++) {
@@ -91,32 +91,32 @@ function OneExerciseScale(props) {
       
       console.log(possibleScales)
       
-      if (randScale.includes(4) && randScale.includes(5) && randScale.includes(11)) {
-        scaleName = "Major"
+      if (randScale.includes(4) && randScale.includes(7)) {
+        scaleName = "Maj"
       }  
-      if (randScale.includes(4) && randScale.includes(6)) {
-        scaleName = "Lydian"
+      if (randScale.includes(3) && randScale.includes(8)) {
+        scaleName = "Maj1"
       } 
-      if (randScale.includes(4) && randScale.includes(10)) {
-        scaleName = "Mixolydian"
+      if (randScale.includes(5) && randScale.includes(9)) {
+        scaleName = "Maj2"
       } 
-      if (randScale.includes(2) && randScale.includes(3) && randScale.includes(8) && randScale.includes(10)) {
-        scaleName = "Minor"
+      if (randScale.includes(3) && randScale.includes(7)) {
+        scaleName = "Min"
       } 
-      if (randScale.includes(3) && randScale.includes(9) && randScale.includes(10)) {
-        scaleName = "Dorian"
+      if (randScale.includes(4) && randScale.includes(9)) {
+        scaleName = "Min1"
       } 
-      if (randScale.includes(1) && randScale.includes(7)) {
-        scaleName = "Phrygian"
+      if (randScale.includes(5) && randScale.includes(8)) {
+        scaleName = "Min2"
       } 
-      if (randScale.includes(1) && randScale.includes(6)) {
-        scaleName = "Locrian"
+      if (randScale.includes(3) && randScale.includes(6)) {
+        scaleName = "Dim"
       };
-      if (randScale.includes(3) && randScale.includes(8) && randScale.includes(11)) {
-        scaleName = "Harmonic Minor"
+      if (randScale.includes(3) && randScale.includes(9)) {
+        scaleName = "Dim1"
       };
-      if (randScale.includes(3) && randScale.includes(9) && randScale.includes(11)) {
-        scaleName = "Melodic Minor"
+      if (randScale.includes(6) && randScale.includes(9)) {
+        scaleName = "Dim2"
       };
 
 
@@ -132,25 +132,17 @@ function OneExerciseScale(props) {
     let note1 = new Audio(piano[rand1])
     let note2 = new Audio(piano[rand1 + randScale[0]])
     let note3 = new Audio(piano[rand1 + randScale[1]])
-    let note4 = new Audio(piano[rand1 + randScale[2]])
-    let note5 = new Audio(piano[rand1 + randScale[3]])
-    let note6 = new Audio(piano[rand1 + randScale[4]])
-    let note7 = new Audio(piano[rand1 + randScale[5]])
-    let note8 = new Audio(piano[rand1 + randScale[6]])
+    
 
     let notes = [];
-    notes.push(note1, note2, note3, note4, note5, note6, note7, note8)
+    notes.push(note1, note2, note3)
 
     notes[0].load()
     notes[1].load()
     notes[2].load()
-    notes[3].load()
-    notes[4].load()
-    notes[5].load()
-    notes[6].load()
-    notes[7].load()
+    
 
-    for (let i = 0; i < 8; i++) {   
+    for (let i = 0; i < 3; i++) {   
         setTimeout(function(){
             notes[i].play()
             
@@ -241,32 +233,32 @@ function OneExerciseScale(props) {
 
         <div className="exButtons">
 
-            {checkScale([2, 4, 5, 7, 9, 11, 12]) && 
-            <button  key={Math.random()} className={(flash === "Major" ? "right" : undefined) || (flash !== "Major" && checkScaleButton === "Major" ? " wrong" : undefined)} onClick={() => check("Major")} value="0">Major</button>
+            {checkScale([4, 7]) && 
+                <button key={Math.random()} className={(flash === "Maj" ? "right" : undefined) || (flash !== "Maj" && checkScaleButton === "Maj" ? " wrong" : undefined)} onClick={() => check("Maj")} value="0">Major Root</button>            
             }
-            {checkScale([2, 3, 5, 7, 8, 10, 12]) && 
-            <button key={Math.random()} className={(flash === "Minor" ? "right" : undefined) || (flash !== "Minor" && checkScaleButton === "Minor" ? " wrong" : undefined)} onClick={() => check("Minor")}  value="1">Minor</button>
+            {checkScale([3, 8]) && 
+                <button key={Math.random()} className={(flash === "Maj1" ? "right" : undefined) || (flash !== "Maj1" && checkScaleButton === "Maj1" ? " wrong" : undefined)} onClick={() => check("Maj1")}  value="1">Major 1º Inv.</button>
             }
-            {checkScale([2, 3, 5, 7, 8, 11, 12]) && 
-            <button key={Math.random()} className={(flash === "Harmonic Minor" ? "right" : undefined) || (flash !== "Harmonic Minor" && checkScaleButton === "Harmonic Minor" ? " wrong" : undefined)} onClick={() => check("Harmonic Minor")}  value="7">Harmonic Minor</button>
+            {checkScale([5, 9]) && 
+                <button key={Math.random()} className={(flash === "Maj2" ? "right" : undefined) || (flash !== "Maj2" && checkScaleButton === "Maj2" ? " wrong" : undefined)} onClick={() => check("Maj2")}  value="2">Major 2º Inv.</button>
             }
-            {checkScale([2, 3, 5, 7, 9, 11, 12]) && 
-            <button key={Math.random()} className={(flash === "Melodic Minor" ? "right" : undefined) || (flash !== "Melodic Minor" && checkScaleButton === "Melodic Minor" ? " wrong" : undefined)} onClick={() => check("Melodic Minor")}  value="8">Melodic Minor</button>
+            {checkScale([3, 7]) && 
+                <button key={Math.random()} className={(flash === "Min" ? "right" : undefined) || (flash !== "Min" && checkScaleButton === "Min" ? " wrong" : undefined)} onClick={() => check("Min")}  value="3">Minor Root</button>
             }
-            {checkScale([2, 3, 5, 7, 9, 10, 12]) && 
-            <button key={Math.random()} className={(flash === "Dorian" ? "right" : undefined) || (flash !== "Dorian" && checkScaleButton === "Dorian" ? " wrong" : undefined)} onClick={() => check("Dorian")}  value="2">Dorian</button>
+            {checkScale([4, 9]) && 
+                <button key={Math.random()} className={(flash === "Min1" ? "right" : undefined) || (flash !== "Min1" && checkScaleButton === "Min1" ? " wrong" : undefined)} onClick={() => check("Min1")}  value="4">Minor 1º Inv.</button>
             }
-            {checkScale([1, 3, 5, 7, 8, 10, 12]) && 
-            <button key={Math.random()} className={(flash === "Phrygian" ? "right" : undefined) || (flash !== "Phrygian" && checkScaleButton === "Phrygian" ? " wrong" : undefined)} onClick={() => check("Phrygian")}  value="3">Phrygian</button>
+            {checkScale([5, 8]) && 
+                <button key={Math.random()} className={(flash === "Min2" ? "right" : undefined) || (flash !== "Min2" && checkScaleButton === "Min2" ? " wrong" : undefined)} onClick={() => check("Min2")}  value="5">Minor 2º Inv.</button>
             }
-            {checkScale([2, 4, 6, 7, 9, 11, 12]) && 
-            <button key={Math.random()} className={(flash === "Lydian" ? "right" : undefined) || (flash !== "Lydian" && checkScaleButton === "Lydian" ? " wrong" : undefined)} onClick={() => check("Lydian")}  value="4">Lydian</button>
+            {checkScale([3, 6]) && 
+                <button key={Math.random()} className={(flash === "Dim" ? "right" : undefined) || (flash !== "Dim" && checkScaleButton === "Dim" ? " wrong" : undefined)} onClick={() => check("Dim")}  value="3">Diminished Root</button>
             }
-            {checkScale([2, 4, 5, 7, 9, 10, 12]) && 
-            <button key={Math.random()} className={(flash === "Mixolydian" ? "right" : undefined) || (flash !== "Mixolydian" && checkScaleButton === "Mixolydian" ? " wrong" : undefined)} onClick={() => check("Mixolydian")}  value="5">Mixolydian</button>
+            {checkScale([3, 9]) && 
+                <button key={Math.random()} className={(flash === "Dim1" ? "right" : undefined) || (flash !== "Dim1" && checkScaleButton === "Dim1" ? " wrong" : undefined)} onClick={() => check("Dim1")}  value="3">Diminished 1º Inv.</button>
             }
-            {checkScale([1, 3, 5, 6, 8, 10, 12]) && 
-            <button key={Math.random()} className={(flash === "Locrian" ? "right" : undefined) || (flash !== "Locrian" && checkScaleButton === "Locrian" ? " wrong" : undefined)} onClick={() => check("Locrian")}  value="6">Locrian</button>
+            {checkScale([6, 9]) && 
+                <button key={Math.random()} className={(flash === "Dim2" ? "right" : undefined) || (flash !== "Dim2" && checkScaleButton === "Dim2" ? " wrong" : undefined)} onClick={() => check("Dim2")}  value="3">Diminished 2º Inv.</button>
             }
         
         </div>
@@ -282,4 +274,4 @@ function OneExerciseScale(props) {
   )
 }
 
-export default OneExerciseScale;
+export default OneExerciseArpeggio;

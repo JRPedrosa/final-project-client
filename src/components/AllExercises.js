@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
-import { useHistory } from "react-router-dom";
-import { toast } from "react-toastify";
+
 
 function AllExercises() {
 
     const [exercises, setExercises] = useState([]);
     const [scales, setScales] = useState([]);
-    const history = useHistory();
+    const [arpeggios, setArpeggios] = useState([]);
+    
     const [deleteInterval, setDeleteInterval] = useState(false)
 
     useEffect(() => {
@@ -23,6 +23,13 @@ function AllExercises() {
             setScales(response.data);
         }
         getAllScales();
+
+        async function getAllArpeggios() {
+            const response = await axios.get(`${process.env.REACT_APP_SERVER_HOSTNAME}/arpeggios`, { withCredentials: true});
+            setArpeggios(response.data);
+        }
+        getAllArpeggios();
+
     }, [deleteInterval])
 
     const handleDeleteExercise = async (id) => {
@@ -45,13 +52,23 @@ function AllExercises() {
         // history.push("/exercises");
       };
 
+      const handleDeleteArpeggio = async (id) => {
+        await axios.delete(
+          `${process.env.REACT_APP_SERVER_HOSTNAME}/arpeggio/${id}`
+        );
+        // toast.info("Exercise deleted")
+        setDeleteInterval(!deleteInterval);
+        
+        // history.push("/exercises");
+      };
+
     
   return (
       <div className="allBefore" >
 
                     <div className="all">
 
-                            <div className="allText">
+                            <div className="allTextExer">
 
                             <h1>Interval Exercises</h1>
 
@@ -73,14 +90,37 @@ function AllExercises() {
                             </div>
                             <div></div>
                             <div></div>
-                            <div></div>
+                            {/* <div></div>
+                            <div></div> */}
+
+
+                            <div className="allTextExer">
+
+                            <h1>Arpeggios Exercises</h1>
+
+                            <ul>
+                                    {arpeggios.map((exercise) => {
+                                        return <li className="linkFlex" key={exercise._id}>
+
+
+                                            <NavLink className="allLinks" to={`/arpeggios/${exercise._id}`}>- {exercise.name}</NavLink>
+                                            
+                                            <button onClick={() => handleDeleteArpeggio(exercise._id)}>Delete</button>
+                                            
+
+                                        </li>
+                                        
+                                    })}
+                                </ul>
+
+                            </div>
+
+
+
                             <div></div>
                             <div></div>
 
-
-                            <div></div>
-
-                            <div className="allText">
+                            <div className="allTextExer">
 
                                 <h1>Scale Exercises</h1>
 

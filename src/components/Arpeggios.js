@@ -47,18 +47,11 @@ let piano = [
   "../2489__jobro__piano-ff/39209__jobro__piano-ff-061.wav",
 ];
 
-
 let note1;
 let note2;
 let note3;
-let note4;
-let note5;
-let note6;
-let note7;
-let note8;
 
-
-function Scale() {
+function Arpeggio() {
   
   
   const [message, setMessage] = useState("");
@@ -78,15 +71,15 @@ function Scale() {
 
 
       let possibleScales = [
-        [2, 4, 5, 7, 9, 11, 12], 
-        [2, 3, 5, 7, 8, 10, 12],
-        [2, 3, 5, 7, 8, 11, 12],
-        [2, 3, 5, 7, 9, 11, 12],
-        [2, 3, 5, 7, 9, 10, 12], 
-        [1, 3, 5, 7, 8, 10, 12],
-        [2, 4, 6, 7, 9, 11, 12],
-        [2, 4, 5, 7, 9, 10, 12],
-        [1, 3, 5, 6, 8, 10, 12],
+        [4, 7],
+        [3, 8],
+        [5, 9],
+        [3, 7],
+        [4, 9],
+        [5, 8],
+        [3, 6],
+        [3, 9],
+        [6, 9],
       ]
       let randIndex = Math.floor(Math.random() * possibleScales.length)
       randScale = possibleScales[randIndex]
@@ -95,31 +88,31 @@ function Scale() {
       
       switch (randIndex) {
         case 0:
-          scaleName = "Major"
+          scaleName = "Maj"
           break;
         case 1:
-          scaleName = "Minor"
+          scaleName = "Maj1"
           break;
         case 2:
-          scaleName = "Harmonic Minor"
+          scaleName = "Maj2"
           break;
         case 3:
-          scaleName = "Melodic Minor"
+          scaleName = "Min"
           break;
         case 4:
-          scaleName = "Dorian"
+          scaleName = "Min1"
           break;
         case 5:
-          scaleName = "Phrygian"
+          scaleName = "Min2"
           break;
         case 6:
-          scaleName = "Lydian"
+          scaleName = "Dim"
           break;
         case 7:
-          scaleName = "Mixolydian"
+          scaleName = "Dim1"
           break;
         case 8:
-          scaleName = "Locrian"
+          scaleName = "Dim2"
           break;
         default:
           console.log("something wrong with switch");
@@ -138,25 +131,17 @@ function Scale() {
     note1 = new Audio(piano[rand1])
     note2 = new Audio(piano[rand1 + randScale[0]])
     note3 = new Audio(piano[rand1 + randScale[1]])
-    note4 = new Audio(piano[rand1 + randScale[2]])
-    note5 = new Audio(piano[rand1 + randScale[3]])
-    note6 = new Audio(piano[rand1 + randScale[4]])
-    note7 = new Audio(piano[rand1 + randScale[5]])
-    note8 = new Audio(piano[rand1 + randScale[6]])
+
 
     let notes = [];
-    notes.push(note1, note2, note3, note4, note5, note6, note7, note8)
+    notes.push(note1, note2, note3)
 
     notes[0].load()
     notes[1].load()
     notes[2].load()
-    notes[3].load()
-    notes[4].load()
-    notes[5].load()
-    notes[6].load()
-    notes[7].load()
 
-    for (let i = 0; i < 8; i++) {   
+
+    for (let i = 0; i < 3; i++) {   
         setTimeout(function(){
             notes[i].play()
             
@@ -204,7 +189,7 @@ function Scale() {
 
       <div className="intervalScale">
 
-        <h1>Scale Identification</h1>
+        <h1>Arpeggio Identification</h1>
 
             <div className="playButton">
               <div></div>
@@ -231,17 +216,16 @@ function Scale() {
 
             <div className="exButtons">
 
-              <button key={Math.random()} className={(flash === "Major" ? "right" : undefined) || (flash !== "Major" && checkScale === "Major" ? " wrong" : undefined)} onClick={() => check("Major")} value="0">Major</button>
-              <button key={Math.random()} className={(flash === "Minor" ? "right" : undefined) || (flash !== "Minor" && checkScale === "Minor" ? " wrong" : undefined)} onClick={() => check("Minor")}  value="1">Minor</button>
-              <button key={Math.random()} className={(flash === "Harmonic Minor" ? "right" : undefined) || (flash !== "Harmonic Minor" && checkScale === "Harmonic Minor" ? " wrong" : undefined)} onClick={() => check("Harmonic Minor")}  value="2">Harmonic Minor</button>
-              <button key={Math.random()} className={(flash === "Melodic Minor" ? "right" : undefined) || (flash !== "Melodic Minor" && checkScale === "Melodic Minor" ? " wrong" : undefined)} onClick={() => check("Melodic Minor")}  value="3">Melodic Minor</button>
-              <button key={Math.random()} className={(flash === "Dorian" ? "right" : undefined) || (flash !== "Dorian" && checkScale === "Dorian" ? " wrong" : undefined)} onClick={() => check("Dorian")}  value="4">Dorian</button>
-              <button key={Math.random()} className={(flash === "Phrygian" ? "right" : undefined) || (flash !== "Phrygian" && checkScale === "Phrygian" ? " wrong" : undefined)} onClick={() => check("Phrygian")}  value="5">Phrygian</button>
-              <button key={Math.random()} className={(flash === "Lydian" ? "right" : undefined) || (flash !== "Lydian" && checkScale === "Lydian" ? " wrong" : undefined)} onClick={() => check("Lydian")}  value="6">Lydian</button>
-              <button key={Math.random()} className={(flash === "Mixolydian" ? "right" : undefined) || (flash !== "Mixolydian" && checkScale === "Mixolydian" ? " wrong" : undefined)} onClick={() => check("Mixolydian")}  value="7">Mixolydian</button>
-              <button key={Math.random()} className={(flash === "Locrian" ? "right" : undefined) || (flash !== "Locrian" && checkScale === "Locrian" ? " wrong" : undefined)} onClick={() => check("Locrian")}  value="8">Locrian</button>
-
-
+              <button key={Math.random()} className={(flash === "Maj" ? "right" : undefined) || (flash !== "Maj" && checkScale === "Maj" ? " wrong" : undefined)} onClick={() => check("Maj")} value="0">Major Root</button>
+              <button key={Math.random()} className={(flash === "Maj1" ? "right" : undefined) || (flash !== "Maj1" && checkScale === "Maj1" ? " wrong" : undefined)} onClick={() => check("Maj1")}  value="1">Major 1º Inv.</button>
+              <button key={Math.random()} className={(flash === "Maj2" ? "right" : undefined) || (flash !== "Maj2" && checkScale === "Maj2" ? " wrong" : undefined)} onClick={() => check("Maj2")}  value="2">Major 2º Inv.</button>
+              <button key={Math.random()} className={(flash === "Min" ? "right" : undefined) || (flash !== "Min" && checkScale === "Min" ? " wrong" : undefined)} onClick={() => check("Min")}  value="3">Minor Root</button>
+              <button key={Math.random()} className={(flash === "Min1" ? "right" : undefined) || (flash !== "Min1" && checkScale === "Min1" ? " wrong" : undefined)} onClick={() => check("Min1")}  value="4">Minor 1º Inv.</button>
+              <button key={Math.random()} className={(flash === "Min2" ? "right" : undefined) || (flash !== "Min2" && checkScale === "Min2" ? " wrong" : undefined)} onClick={() => check("Min2")}  value="5">Minor 2º Inv.</button>
+              <button key={Math.random()} className={(flash === "Dim" ? "right" : undefined) || (flash !== "Dim" && checkScale === "Dim" ? " wrong" : undefined)} onClick={() => check("Dim")}  value="3">Diminished Root</button>
+              <button key={Math.random()} className={(flash === "Dim1" ? "right" : undefined) || (flash !== "Dim1" && checkScale === "Dim1" ? " wrong" : undefined)} onClick={() => check("Dim1")}  value="3">Diminished 1º Inv.</button>
+              <button key={Math.random()} className={(flash === "Dim2" ? "right" : undefined) || (flash !== "Dim2" && checkScale === "Dim2" ? " wrong" : undefined)} onClick={() => check("Dim2")}  value="3">Diminished 2º Inv.</button>
+              
             </div>
             
 
@@ -254,4 +238,4 @@ function Scale() {
   )
 }
 
-export default Scale;
+export default Arpeggio;

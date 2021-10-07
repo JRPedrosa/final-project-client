@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "animate.css";
 
 let rand1;
@@ -48,25 +48,27 @@ let piano = [
   "../2489__jobro__piano-ff/39209__jobro__piano-ff-061.wav",
 ];
 
+let note1;
+let note2;
 
 
 function Interval() {
-
+  
   const [message, setMessage] = useState("");
-
+  
   const [animate, setAnimate] = useState(false);
-
+  
   const [color, setColor] = useState(false);
-
+  
   const [flash, setFlash] = useState(null)
-
+  
   const [checkNum, setCheckNum] = useState(null);
-
-
+  
+  
   function randomize() {
-
-      // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-
+    
+    // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    
       let possibleIntervals = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
       randInterval = possibleIntervals[Math.floor(Math.random() * possibleIntervals.length)]
       rand1 = Math.floor(Math.random() * 24)
@@ -80,16 +82,20 @@ function Interval() {
   // }, [test])
 
 
-  function play() {
+   function play() {
 
-    let note1 = new Audio(piano[rand1])
-    let note2 = new Audio(piano[rand2])
+    note1 = new Audio(piano[rand1])
+    note2 = new Audio(piano[rand2])
+
+    note1.load()
+    note2.load()
 
     note1.play()
     setTimeout(function(){
-      note1.pause();
+       note1.pause();
+        //note1.play()
       note2.play(); 
-     }, 1000);
+      }, 800);
     
 
     // console.log(`Interval: ${randInterval} - Rand1: ${rand1} - rand2: ${rand2} `)
@@ -143,7 +149,7 @@ function Interval() {
               <div></div>
               <div></div>
 
-                <button onClick={() => randomize()}>Play New Interval</button>
+                <button onClick={() => randomize()}>Play New</button>
 
                 <button onClick={() => play()}>Repeat</button>
               

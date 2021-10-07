@@ -10,20 +10,20 @@ function Home({loggedInUser}) {
   <div className="home">
 
 
+            {/* <div> */}
 
-            <NavLink className="homeLinks" id="myExercises"  activeStyle={{ color: "red" }} exact to="/exercises">
-              My Exercises
-            </NavLink>
+            <NavLink className="homeLinks" id="myExercises"  activeStyle={{ color: "red" }} exact to="/exercises">My Exercises</NavLink>
+
+            {/* </div> */}
 
             
           <div>
-          <NavLink className="homeLinks"  activeStyle={{ color: "red" }} exact to="/create-interval">
-              Custom Intervals Exercise
-            </NavLink>
+          <NavLink className="homeLinks"  activeStyle={{ color: "red" }} exact to="/create-interval">Custom Intervals Exercise</NavLink>
+
+            <NavLink className="homeLinks"  activeStyle={{ color: "red" }} exact to="/create-arpeggio">Custom Arpeggios Exercise</NavLink>
           
-            <NavLink className="homeLinks"  activeStyle={{ color: "red" }} exact to="/create-scales">
-              Custom Scales Exercise
-            </NavLink>
+            <NavLink className="homeLinks"  activeStyle={{ color: "red" }} exact to="/create-scales">Custom Scales Exercise</NavLink>
+            
           </div>
             
           
