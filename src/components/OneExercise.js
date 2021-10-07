@@ -141,9 +141,9 @@ function OneExercise(props) {
     } else {
 
       counter++;
-      if (correct > 0) {
-        correct--;
-      }
+      // if (correct > 0) {
+      //   correct--;
+      // }
       percent = Math.floor((correct / counter) * 100);
 
       setAnimate(!animate);

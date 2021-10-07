@@ -442,12 +442,12 @@ nav button:hover {
 
 .right {
   animation-name: right1;
-  animation-duration: 0.5s;
+  animation-duration: 1s;
 }
 
 .wrong {
   animation-name: wrong;
-  animation-duration: 0.5s;
+  animation-duration: 1s;
 }
 
 @keyframes right1 {

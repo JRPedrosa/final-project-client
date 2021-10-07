@@ -92,7 +92,7 @@ function Interval() {
      }, 1000);
     
 
-    console.log(`Interval: ${randInterval} - Rand1: ${rand1} - rand2: ${rand2} `)
+    // console.log(`Interval: ${randInterval} - Rand1: ${rand1} - rand2: ${rand2} `)
   }
 
 
@@ -116,9 +116,9 @@ function Interval() {
     } else { 
 
       counter++;
-      if (correct > 0) {
-        correct--;
-      }
+      // if (correct > 0) {
+      //   correct--;
+      // }
       percent = Math.floor((correct / counter) * 100);
       console.log(`Counter: ${counter} -- Correct: ${correct} -- Percent: ${percent}`)
       setAnimate(!animate);

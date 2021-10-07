@@ -61,6 +61,10 @@ function OneExerciseScale(props) {
 
   const [color, setColor] = useState(false);
 
+  const [flash, setFlash] = useState("")
+
+  const [checkScaleButton, setCheckScaleButton] = useState("");
+
 
 
   useEffect(() => {
@@ -89,7 +93,7 @@ function OneExerciseScale(props) {
       console.log(possibleScales)
       
       if (randScale.includes(4) && randScale.includes(5) && randScale.includes(11)) {
-        scaleName = "Major Scale"
+        scaleName = "Major"
       }  
       if (randScale.includes(4) && randScale.includes(6)) {
         scaleName = "Lydian"
@@ -98,7 +102,7 @@ function OneExerciseScale(props) {
         scaleName = "Mixolydian"
       } 
       if (randScale.includes(2) && randScale.includes(3) && randScale.includes(8) && randScale.includes(10)) {
-        scaleName = "Minor Scale"
+        scaleName = "Minor"
       } 
       if (randScale.includes(3) && randScale.includes(9) && randScale.includes(10)) {
         scaleName = "Dorian"
@@ -151,6 +155,8 @@ function OneExerciseScale(props) {
 
 
   function check(scale) {
+    setFlash(scaleName);
+    setCheckScaleButton(scale);
 
     if (scale === scaleName) {
 
@@ -166,15 +172,16 @@ function OneExerciseScale(props) {
     } else {
 
       counter++;
-      if (correct > 0) {
-        correct--;
-      }
+      // if (correct > 0) {
+      //   correct--;
+      // }
       percent = Math.floor((correct / counter) * 100);
 
         setAnimate(!animate);
         setColor(false);
         setMessage("Wrong!")
         console.log("wrong")
+        randomize();
     }
 
     console.log(randScale, scale, scaleName)
@@ -227,31 +234,31 @@ function OneExerciseScale(props) {
         <div className="exButtons">
 
             {checkScale([2, 4, 5, 7, 9, 11, 12]) && 
-            <button onClick={() => check("Major Scale")} value="0">Major</button>
+            <button  key={Math.random()} className={(flash === "Major" ? "right" : undefined) || (flash !== "Major" && checkScaleButton === "Major" ? " wrong" : undefined)} onClick={() => check("Major")} value="0">Major</button>
             }
             {checkScale([2, 3, 5, 7, 8, 10, 12]) && 
-            <button onClick={() => check("Minor Scale")}  value="1">Minor</button>
+            <button key={Math.random()} className={(flash === "Minor" ? "right" : undefined) || (flash !== "Minor" && checkScaleButton === "Minor" ? " wrong" : undefined)} onClick={() => check("Minor")}  value="1">Minor</button>
             }
             {checkScale([2, 3, 5, 7, 8, 11, 12]) && 
-            <button onClick={() => check("Harmonic Minor")}  value="7">Harmonic Minor</button>
+            <button key={Math.random()} className={(flash === "Harmonic Minor" ? "right" : undefined) || (flash !== "Harmonic Minor" && checkScaleButton === "Harmonic Minor" ? " wrong" : undefined)} onClick={() => check("Harmonic Minor")}  value="7">Harmonic Minor</button>
             }
             {checkScale([2, 3, 5, 7, 9, 11, 12]) && 
-            <button onClick={() => check("Melodic Minor")}  value="8">Melodic Minor</button>
+            <button key={Math.random()} className={(flash === "Melodic Minor" ? "right" : undefined) || (flash !== "Melodic Minor" && checkScaleButton === "Melodic Minor" ? " wrong" : undefined)} onClick={() => check("Melodic Minor")}  value="8">Melodic Minor</button>
             }
             {checkScale([2, 3, 5, 7, 9, 10, 12]) && 
-            <button onClick={() => check("Dorian")}  value="2">Dorian</button>
+            <button key={Math.random()} className={(flash === "Dorian" ? "right" : undefined) || (flash !== "Dorian" && checkScaleButton === "Dorian" ? " wrong" : undefined)} onClick={() => check("Dorian")}  value="2">Dorian</button>
             }
             {checkScale([1, 3, 5, 7, 8, 10, 12]) && 
-            <button onClick={() => check("Phrygian")}  value="3">Phrygian</button>
+            <button key={Math.random()} className={(flash === "Phrygian" ? "right" : undefined) || (flash !== "Phrygian" && checkScaleButton === "Phrygian" ? " wrong" : undefined)} onClick={() => check("Phrygian")}  value="3">Phrygian</button>
             }
             {checkScale([2, 4, 6, 7, 9, 11, 12]) && 
-            <button onClick={() => check("Lydian")}  value="4">Lydian</button>
+            <button key={Math.random()} className={(flash === "Lydian" ? "right" : undefined) || (flash !== "Lydian" && checkScaleButton === "Lydian" ? " wrong" : undefined)} onClick={() => check("Lydian")}  value="4">Lydian</button>
             }
             {checkScale([2, 4, 5, 7, 9, 10, 12]) && 
-            <button onClick={() => check("Mixolydian")}  value="5">Mixolydian</button>
+            <button key={Math.random()} className={(flash === "Mixolydian" ? "right" : undefined) || (flash !== "Mixolydian" && checkScaleButton === "Mixolydian" ? " wrong" : undefined)} onClick={() => check("Mixolydian")}  value="5">Mixolydian</button>
             }
             {checkScale([1, 3, 5, 6, 8, 10, 12]) && 
-            <button onClick={() => check("Locrian")}  value="6">Locrian</button>
+            <button key={Math.random()} className={(flash === "Locrian" ? "right" : undefined) || (flash !== "Locrian" && checkScaleButton === "Locrian" ? " wrong" : undefined)} onClick={() => check("Locrian")}  value="6">Locrian</button>
             }
         
         </div>
