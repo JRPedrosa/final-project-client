@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
+import "animate.css";
 
 let rand1;
 let rand2;
-let randInterval
+let randInterval;
+let counter = 0;
+let correct = 0;
+let percent;
 
 let piano = [
   "../2489__jobro__piano-ff/39172__jobro__piano-ff-025.wav",
@@ -50,6 +54,15 @@ function Interval() {
 
   const [message, setMessage] = useState("");
 
+  const [animate, setAnimate] = useState(false);
+
+  const [color, setColor] = useState(false);
+
+  const [flash, setFlash] = useState(null)
+
+  const [checkNum, setCheckNum] = useState(null);
+
+
   function randomize() {
 
       // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
@@ -58,10 +71,13 @@ function Interval() {
       randInterval = possibleIntervals[Math.floor(Math.random() * possibleIntervals.length)]
       rand1 = Math.floor(Math.random() * 24)
       rand2 = rand1 + randInterval
-
       play();
   }
 
+
+  // useEffect(() => {
+  //   setAnimate(!animate);
+  // }, [test])
 
 
   function play() {
@@ -82,13 +98,34 @@ function Interval() {
 
 
   function check(num) {
+    setFlash(randInterval);
+    setCheckNum(num);
+
     if (num === randInterval) {
-      console.log("SUCCESSS BIATCH")
+      counter++;
+      correct++;
+      percent = Math.floor((correct / counter) * 100);
+
+      console.log(`Counter: ${counter} -- Correct: ${correct} -- Percent: ${percent}`)
+      setAnimate(!animate);
+      setColor(true);
       setMessage("Correct")
       randomize();
-    } else {
-      console.log("you dumb cunt")
+
+
+    } else { 
+
+      counter++;
+      if (correct > 0) {
+        correct--;
+      }
+      percent = Math.floor((correct / counter) * 100);
+      console.log(`Counter: ${counter} -- Correct: ${correct} -- Percent: ${percent}`)
+      setAnimate(!animate);
+      setColor(false);
       setMessage("Wrong!")
+      randomize();
+      
     }
   }
 
@@ -116,27 +153,35 @@ function Interval() {
 
             </div>
 
-            <br></br><br></br>
+            <br></br>
 
-            <h2>{message} <span></span></h2>
+            {percent ? <p className="percent" >{percent}%</p> : <p className="percent" >{correct}</p> }
+            
+            
+            
+            
+
+          
+            <h2 key={animate} className={"animate__animated animate__bounceIn" + (color ? " green" : " red")}>{message}</h2>
+          
 
             <br></br><br></br>
 
             <div className="exButtons">
 
-              <button onClick={() => check(0)} value="0">Unisson</button>
-              <button onClick={() => check(1)}  value="1">Minor Second</button>
-              <button onClick={() => check(2)}  value="2">Major Second</button>
-              <button onClick={() => check(3)}  value="3">Minor Third</button>
-              <button onClick={() => check(4)}  value="4">Major Third</button>
-              <button onClick={() => check(5)}  value="5">Perfect Fourth</button>
-              <button onClick={() => check(6)}  value="6">Tritone</button>
-              <button onClick={() => check(7)}  value="7">Perfect Fifth</button>
-              <button onClick={() => check(8)}  value="8">Minor Sixth</button>
-              <button onClick={() => check(9)}  value="9">Major Sixth</button>
-              <button onClick={() => check(10)}  value="10">Minor Seventh</button>
-              <button onClick={() => check(11)}  value="11">Major Seventh</button>
-              <button id="lastButton" onClick={() => check(12)}  value="12">Octave</button>
+              <button key={Math.random()}  onClick={() => check(0)} className={(flash === 0 ? "right" : undefined) || (flash !== 0 && checkNum === 0 ? " wrong" : undefined)} value="0">Unisson</button>
+              <button key={Math.random()}  onClick={() => check(1)} className={(flash === 1 ? "right" : undefined) || (flash !== 1 && checkNum === 1 ? " wrong" : undefined)} value="1">Minor Second</button>
+              <button key={Math.random()}  onClick={() => check(2)} className={(flash === 2 ? "right" : undefined) || (flash !== 2 && checkNum === 2 ? " wrong" : undefined)} value="2">Major Second</button>
+              <button key={Math.random()}  onClick={() => check(3)} className={(flash === 3 ? "right" : undefined) || (flash !== 3 && checkNum === 3 ? " wrong" : undefined)} value="3">Minor Third</button>
+              <button key={Math.random()}  onClick={() => check(4)} className={(flash === 4 ? "right" : undefined) || (flash !== 4 && checkNum === 4 ? " wrong" : undefined)} value="4">Major Third</button>
+              <button key={Math.random()}  onClick={() => check(5)} className={(flash === 5 ? "right" : undefined) || (flash !== 5 && checkNum === 5 ? " wrong" : undefined)} value="5">Perfect Fourth</button>
+              <button key={Math.random()}  onClick={() => check(6)} className={(flash === 6 ? "right" : undefined) || (flash !== 6 && checkNum === 6 ? " wrong" : undefined)} value="6">Tritone</button>
+              <button key={Math.random()}  onClick={() => check(7)} className={(flash === 7 ? "right" : undefined) || (flash !== 7 && checkNum === 7 ? " wrong" : undefined)} value="7">Perfect Fifth</button>
+              <button key={Math.random()}  onClick={() => check(8)} className={(flash === 8 ? "right" : undefined) || (flash !== 8 && checkNum === 8 ? " wrong" : undefined)} value="8">Minor Sixth</button>
+              <button key={Math.random()}  onClick={() => check(9)} className={(flash === 9 ? "right" : undefined) || (flash !== 9 && checkNum === 9 ? " wrong" : undefined)} value="9">Major Sixth</button>
+              <button key={Math.random()} onClick={() => check(10)} className={(flash === 10 ? "right" : undefined) || (flash !== 10 && checkNum === 10 ? " wrong" : undefined)} value="10">Minor Seventh</button>
+              <button key={Math.random()} onClick={() => check(11)} className={(flash === 11 ? "right" : undefined) || (flash !== 11 && checkNum === 11 ? " wrong" : undefined)} value="11">Major Seventh</button>
+              <button key={Math.random()} onClick={() => check(12)} className={(flash === 12 ? "right" : undefined) || (flash !== 12 && checkNum === 12 ? " wrong" : undefined)} value="12">Octave</button>
 
             </div>
             

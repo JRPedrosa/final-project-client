@@ -9,12 +9,16 @@ function Login(props) {
   const [password, setPassword] = useState("");
   const history = useHistory();
 
+
+
   const handleFormSubmit = async (e) => {
     e.preventDefault();
+    
     const body = {
       username,
       password,
     };
+
     try {
       const response = await axios.post(
         `${process.env.REACT_APP_SERVER_HOSTNAME}/login`,
@@ -30,6 +34,9 @@ function Login(props) {
       toast.error("Invalid login");
     }
   };
+
+
+
 
   return (
     <div className="homeNot">

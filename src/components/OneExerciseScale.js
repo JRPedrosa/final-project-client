@@ -5,8 +5,9 @@ import { NavLink } from "react-router-dom";
 let rand1;
 let randScale;
 let scaleName = "";
-// let rand2;
-// let randInterval
+let counter = 0;
+let correct = 0;
+let percent;
 
 let piano = [
   "../2489__jobro__piano-ff/39172__jobro__piano-ff-025.wav",
@@ -55,6 +56,11 @@ function OneExerciseScale(props) {
   const [message, setMessage] = useState("");
   const [possibleScales, setPossibleScales] = useState([])
   const [exerciseName, setExerciseName] = useState("")
+
+  const [animate, setAnimate] = useState(false);
+
+  const [color, setColor] = useState(false);
+
 
 
   useEffect(() => {
@@ -147,10 +153,26 @@ function OneExerciseScale(props) {
   function check(scale) {
 
     if (scale === scaleName) {
+
+      counter++;
+      correct++;
+      percent = Math.floor((correct / counter) * 100);
+
+        setAnimate(!animate);
+        setColor(true);
         setMessage("Correct")
         console.log("correct")
         randomize();
     } else {
+
+      counter++;
+      if (correct > 0) {
+        correct--;
+      }
+      percent = Math.floor((correct / counter) * 100);
+
+        setAnimate(!animate);
+        setColor(false);
         setMessage("Wrong!")
         console.log("wrong")
     }
@@ -194,9 +216,11 @@ function OneExerciseScale(props) {
 
         </div>
 
-        <br></br><br></br>
+        <br></br>
 
-            <h2>{message}</h2>
+        {percent ? <p className="percent" >{percent}%</p> : <p className="percent" >{correct}</p> }
+
+            <h2 key={animate} className={"animate__animated animate__bounceIn" + (color ? " green" : " red")} >{message}</h2>
 
         <br></br><br></br>
 

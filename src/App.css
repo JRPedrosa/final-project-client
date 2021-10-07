@@ -257,31 +257,35 @@ nav button:hover {
 }
 
 .intervalScale h2 {
-  color: white;
+  color: rgb(255, 0, 0);
   text-shadow: 0 0 10px rgb(0, 0, 0);
   height: 35px;
 }
 
-.intervalScale span::before {
-  content: "";
-  animation: infinite 2s;
-  animation-iteration-count: 1;
+.green {
+  color: #51ff00 !important;
 }
 
-@keyframes animate {
-  
-  0% {
-      content: "!";
-  }
-
-  50% {
-      content: "!!";
-  }
-
-  75% {
-      content: "!!!";
-  }
+.red {
+  color: rgb(255, 0, 0) !important;
 }
+
+
+
+/* .move{
+  animation-name: example1;
+  animation-duration: 2s;
+}
+
+
+@keyframes example1 {
+  0%   {text-shadow: 0 0 1px rgb(255, 0, 0);}
+  25%  {text-shadow: 0 0 3px rgb(255, 0, 0);}
+  50%  {text-shadow: 0 0 6px rgb(255, 0, 0);}
+  75%  {text-shadow: 0 0 3px rgb(255, 0, 0);}
+  100% {text-shadow: 0 0 1px rgb(255, 0, 0);}
+} */
+
 
 .intervalScale button {
   border-radius: 6px;
@@ -311,9 +315,11 @@ nav button:hover {
 }
 .playButton button {
   width: 130px;
-  height: 30px;
+  height: 25px;
   font-weight: bolder;
+  border-color: rgb(0, 0, 0);
 }
+
 .playButton {
   display: flex;
   flex-direction: row;
@@ -342,10 +348,6 @@ nav button:hover {
   list-style-type: none;
 }
 
-.allText h1 {
-  
-
-}
 
 .allLinks {
   text-decoration: none;
@@ -395,3 +397,80 @@ nav button:hover {
 .linkFlex button:hover {
   background-color: rgba(255, 0, 0, 0.397);
 }
+
+.create {
+  background-color: rgba(78, 78, 78, 0.562);
+  width: 600px;
+  align-self: center;
+  border-radius: 10px;
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.createForm {
+  display: flex;
+  flex-direction: column;
+}
+.create h1 {
+  color: white;
+  text-shadow: 0 0 10px rgb(0, 0, 0);
+}
+
+.create label {
+  color: white;
+  text-shadow: 0 0 10px rgb(0, 0, 0);
+}
+
+.formFlex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.createForm button {
+  width: 110px;
+  align-self: center;
+}
+
+.percent {
+  font-size: 25px !important;
+  color: rgb(255, 255, 255) !important;
+  text-shadow: 0 0 4px rgb(255, 244, 143) !important;
+}
+
+.right {
+  animation-name: right1;
+  animation-duration: 0.5s;
+}
+
+.wrong {
+  animation-name: wrong;
+  animation-duration: 0.5s;
+}
+
+@keyframes right1 {
+  from {background-color: initial;}
+  to {background-color: rgb(128, 255, 0);}
+} 
+
+@keyframes wrong {
+  from {background-color: initial;}
+  to {background-color: rgb(255, 0, 0);}
+} 
+
+
+/* .move{
+  animation-name: example1;
+  animation-duration: 2s;
+}
+
+
+@keyframes example1 {
+  0%   {text-shadow: 0 0 1px rgb(255, 0, 0);}
+  25%  {text-shadow: 0 0 3px rgb(255, 0, 0);}
+  50%  {text-shadow: 0 0 6px rgb(255, 0, 0);}
+  75%  {text-shadow: 0 0 3px rgb(255, 0, 0);}
+  100% {text-shadow: 0 0 1px rgb(255, 0, 0);}
+} */

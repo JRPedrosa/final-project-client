@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function AllExercises() {
 
@@ -28,7 +29,7 @@ function AllExercises() {
         await axios.delete(
           `${process.env.REACT_APP_SERVER_HOSTNAME}/interval/${id}`
         );
-        // toast.info("Project deleted")
+        // toast.info("Exercise deleted")
         setDeleteInterval(!deleteInterval);
         
         // history.push("/exercises");
@@ -38,7 +39,7 @@ function AllExercises() {
         await axios.delete(
           `${process.env.REACT_APP_SERVER_HOSTNAME}/scale/${id}`
         );
-        // toast.info("Project deleted")
+        // toast.info("Exercise deleted")
         setDeleteInterval(!deleteInterval);
         
         // history.push("/exercises");

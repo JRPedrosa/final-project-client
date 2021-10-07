@@ -15,6 +15,9 @@ import CreateScale from './components/createScale';
 import OneExerciseScale from './components/OneExerciseScale';
 import { LoggedUserProvider } from "./context/loggedUser";
 import PrivateRoute from "./components/PrivateRoute";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 
 
@@ -38,6 +41,8 @@ function App() {
 
   return (
     <div className="App">
+
+      <ToastContainer />
 
       <LoggedUserProvider value={loggedInUser}>
 
