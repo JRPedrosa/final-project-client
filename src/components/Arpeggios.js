@@ -124,7 +124,7 @@ function Arpeggio() {
 
 
 
-  function play() {
+  async function play() {
 
     console.log(`randScale: ${randScale} - Rand1: ${rand1} `)
 
@@ -140,19 +140,22 @@ function Arpeggio() {
     notes[1].load()
     notes[2].load()
 
+     notes[0].muted = true;
+     notes[1].muted = true;
+     notes[2].muted = true;
+   
+    //  await notes[0].play()
+    //  await notes[1].play()
+    //  await notes[2].play()
+
     
     for (let i = 0; i < 3; i++) { 
-        
-        async function start() {
-            await notes[i].play()
-            
-        }
-        
 
+        notes[i].muted = false;
 
         setTimeout(function(){
-            //notes[i].play()
-            start();
+            notes[i].play()
+            
             
         }, i * 300);
     }
