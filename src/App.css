@@ -435,6 +435,7 @@ nav button:hover {
 .createForm button {
   width: 110px;
   align-self: center;
+  margin-bottom: 8px;;
 }
 
 .percent {
