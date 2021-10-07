@@ -140,10 +140,19 @@ function Arpeggio() {
     notes[1].load()
     notes[2].load()
 
+    
+    for (let i = 0; i < 3; i++) { 
+        
+        async function start() {
+            await notes[i].play()
+            
+        }
+        
 
-    for (let i = 0; i < 3; i++) {   
+
         setTimeout(function(){
-            notes[i].play()
+            //notes[i].play()
+            start();
             
         }, i * 300);
     }
