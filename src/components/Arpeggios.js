@@ -119,45 +119,72 @@ function Arpeggio() {
       }
 
 
-      play();
+      play(false);
   }
 
 
 
-  async function play() {
+  async function play(repeat) {
 
-    console.log(`randScale: ${randScale} - Rand1: ${rand1} `)
-
-    note1 = new Audio(piano[rand1])
-    note2 = new Audio(piano[rand1 + randScale[0]])
-    note3 = new Audio(piano[rand1 + randScale[1]])
-
-
-    let notes = [];
-    notes.push(note1, note2, note3)
-
-    notes[0].load()
-    notes[1].load()
-    notes[2].load()
-
-     notes[0].muted = true;
-     notes[1].muted = true;
-     notes[2].muted = true;
-   
-    //  await notes[0].play()
-    //  await notes[1].play()
-    //  await notes[2].play()
-
+    if (repeat) {
+        console.log(`randScale: ${randScale} - Rand1: ${rand1} `)
     
-    for (let i = 0; i < 3; i++) { 
+        note1 = new Audio(piano[rand1])
+        note2 = new Audio(piano[rand1 + randScale[0]])
+        note3 = new Audio(piano[rand1 + randScale[1]])
+    
+    
+        let notes = [];
+        notes.push(note1, note2, note3)
+    
+        notes[0].load()
+        notes[1].load()
+        notes[2].load()
+    
+        //  notes[0].muted = true;
+        //  notes[1].muted = true;
+        //  notes[2].muted = true;
+       
+        //   await notes[0].play()
+        //   await notes[1].play()
+        //   await notes[2].play()
+    
+        
+        for (let i = 0; i < 3; i++) { 
+    
+            //  notes[i].muted = false;
+    
+            setTimeout(function(){
+                notes[i].play()
+                
+                
+            }, i * 300);
+        }
 
-        notes[i].muted = false;
+    } else {
 
-        setTimeout(function(){
-            notes[i].play()
-            
-            
-        }, i * 300);
+        note1 = new Audio(piano[rand1])
+        note2 = new Audio(piano[rand1 + randScale[0]])
+        note3 = new Audio(piano[rand1 + randScale[1]])
+    
+    
+        let notes = [];
+        notes.push(note1, note2, note3)
+    
+        notes[0].load()
+        notes[1].load()
+        notes[2].load()
+    
+         notes[0].muted = true;
+         notes[1].muted = true;
+         notes[2].muted = true;
+       
+          await notes[0].play()
+          await notes[1].play()
+          await notes[2].play()
+
+        play(true);  
+
     }
 
   }
@@ -209,7 +236,7 @@ function Arpeggio() {
               <div></div>
 
                 <button onClick={() => randomize()}>Play New</button>
-                <button onClick={() => play()}>Repeat</button>
+                <button onClick={() => play(true)}>Repeat</button>
               
               <div></div>
               <div></div>
