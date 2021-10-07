@@ -47,9 +47,9 @@ let piano = [
   "../2489__jobro__piano-ff/39209__jobro__piano-ff-061.wav",
 ];
 
-let note1;
-let note2;
-let note3;
+let note1 = new Audio()
+let note2 = new Audio()
+let note3 = new Audio()
 
 function Arpeggio() {
   
@@ -175,13 +175,13 @@ function Arpeggio() {
         notes[1].load()
         notes[2].load()
     
-         notes[0].muted = true;
-         notes[1].muted = true;
-         notes[2].muted = true;
+        notes[0].muted = true;
+        notes[1].muted = true;
+        notes[2].muted = true;
        
-          await notes[0].play()
-          await notes[1].play()
-          await notes[2].play()
+        notes[0].play()
+        notes[1].play()
+        notes[2].play()
 
         play(true);  
 
