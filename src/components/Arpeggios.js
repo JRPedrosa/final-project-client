@@ -149,6 +149,46 @@ function Arpeggio() {
         //   await notes[1].play()
         //   await notes[2].play()
     
+        
+            
+            for (let i = 0; i < 3; i++) { 
+        
+                //  notes[i].muted = false;
+        
+                setTimeout(function(){
+                    // notes[i].load()
+                    notes[i].play()
+                    
+                    
+                }, i * 300);
+            }
+            
+            
+        
+
+
+    } else {
+
+        note1 = new Audio(piano[rand1])
+        note2 = new Audio(piano[rand1 + randScale[0]])
+        note3 = new Audio(piano[rand1 + randScale[1]])
+    
+    
+        let notes = [];
+        notes.push(note1, note2, note3)
+    
+        // notes[0].load()
+        // notes[1].load()
+        // notes[2].load()
+    
+        // notes[0].muted = true;
+        // notes[1].muted = true;
+        // notes[2].muted = true;
+       
+        // notes[0].play()
+        // notes[1].play()
+        // notes[2].play()
+
         setTimeout(function(){
             
             for (let i = 0; i < 3; i++) { 
@@ -164,32 +204,9 @@ function Arpeggio() {
             }
             
             
-        }, 500);
+        }, 1000);
 
-
-    } else {
-
-        // note1 = new Audio(piano[rand1])
-        // note2 = new Audio(piano[rand1 + randScale[0]])
-        // note3 = new Audio(piano[rand1 + randScale[1]])
-    
-    
-        // let notes = [];
-        // notes.push(note1, note2, note3)
-    
-        // // notes[0].load()
-        // // notes[1].load()
-        // // notes[2].load()
-    
-        // notes[0].muted = true;
-        // notes[1].muted = true;
-        // notes[2].muted = true;
-       
-        // notes[0].play()
-        // notes[1].play()
-        // notes[2].play()
-
-        play(true);  
+        
 
     }
 
