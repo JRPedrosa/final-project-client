@@ -103,7 +103,7 @@ function Interval() {
          note1.pause();
           //note1.play()
         note2.play(); 
-        }, 800);
+        }, 1000);
     } else {
 
       note1 = new Audio(piano[rand1])
@@ -122,7 +122,7 @@ function Interval() {
           note2.play(); 
           }, 800);
 
-       }, 500);
+       }, 1000);
 
 
     }

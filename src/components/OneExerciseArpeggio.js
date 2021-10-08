@@ -151,7 +151,7 @@ function OneExerciseArpeggio(props) {
           setTimeout(function(){
               notes[i].play()
               
-          }, i * 300);
+          }, i * 400);
       }
 
     } else {
@@ -178,7 +178,7 @@ function OneExerciseArpeggio(props) {
             }, i * 400);
         }
         
-    }, 1000);
+    }, 1500);
 
     }
 

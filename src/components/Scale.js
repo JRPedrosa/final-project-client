@@ -196,7 +196,7 @@ function Scale() {
       notes[7].load()
 
   
-      // setTimeout(function(){
+      setTimeout(function(){
         
         for (let i = 0; i < 8; i++) {   
             setTimeout(function(){
@@ -205,7 +205,7 @@ function Scale() {
             }, i * 300);
         }
         
-      // }, 1000);
+      }, 1500);
 
 
 

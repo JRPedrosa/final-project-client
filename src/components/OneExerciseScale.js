@@ -195,7 +195,7 @@ function OneExerciseScale(props) {
             }, i * 300);
         }
         
-    }, 1000);
+    }, 1500);
 
 
     }

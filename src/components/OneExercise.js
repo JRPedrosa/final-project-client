@@ -140,7 +140,7 @@ function OneExercise(props) {
           note3.pause();
           note4.play(); 
          }, 800);
-       }, 500);
+       }, 1000);
 
 
     }
