@@ -44,7 +44,7 @@ function NavBar({ loggedInUser, setCurrentLoggedInUser }) {
            <div className="navSign">
            
             <li>
-              <p>Welcome {loggedInUser.username}</p>
+              <p>Welcome <span>{loggedInUser.username}</span></p>
             </li>
             <li>
               <NavLink className="navLinks" exact to="/">

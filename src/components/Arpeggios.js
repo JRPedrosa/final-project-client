@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 let rand1;
 let randScale;
@@ -63,6 +63,12 @@ function Arpeggio() {
   const [flash, setFlash] = useState("")
 
   const [checkScale, setCheckScale] = useState("");
+
+  useEffect(() => {
+    counter = 0;
+        correct = 0;
+        percent = null;
+  }, [])
 
 
   function randomize() {

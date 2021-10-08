@@ -82,9 +82,15 @@ function OneExercise(props) {
         }
         getOneExercise();
 
+        counter = 0;
+        correct = 0;
+        percent = null;
+
         console.log(intervals)
         
     }, [])
+
+ 
 
   function randomize() {
     // possibleIntervals = intervals

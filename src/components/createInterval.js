@@ -112,7 +112,7 @@ function CreateInterval() {
 
           <form  className="createForm" onSubmit={handleFormSubmit}>
 
-            <div className="formFlex">
+            <div className="formFlex name">
               <label>Name: </label>
               <input
                 maxlength="30"
@@ -204,7 +204,7 @@ function CreateInterval() {
 
             <br></br>
 
-            <div className="formFlex">
+            <div className="formFlex direction">
               <label for="direction">Direction:</label>
               <select id="direction" name="direction" onChange={(e) => setDirection(e.target.value)}>
                 <option value="Ascending">Ascending</option>

@@ -77,6 +77,10 @@ function OneExerciseScale(props) {
     
     }
     getOneScaleExercise();
+
+    counter = 0;
+        correct = 0;
+        percent = null;
     
    
     

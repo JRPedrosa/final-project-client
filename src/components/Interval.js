@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "animate.css";
 
 let rand1;
@@ -63,6 +63,12 @@ function Interval() {
   const [flash, setFlash] = useState(null)
   
   const [checkNum, setCheckNum] = useState(null);
+
+  useEffect(() => {
+    counter = 0;
+        correct = 0;
+        percent = null;
+  }, [])
   
   
   function randomize() {

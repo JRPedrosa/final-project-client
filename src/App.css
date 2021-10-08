@@ -72,7 +72,7 @@ nav li {
 }
 
 .navLinks:hover {
-  text-shadow: 0 0 2px rgb(255, 255, 255);
+  text-shadow: 1px 1px 3px rgb(255, 255, 255) !important;
 }
 
 nav button {
@@ -95,6 +95,13 @@ nav button:hover {
   align-items: center;
   width: 300px;
 }
+
+.navSign span {
+  text-shadow: 1px 1px 3px rgb(255, 255, 255) !important;
+  color:#353535;
+  font-weight: bolder;
+}
+
 .navLogin {
   display: flex;
   flex-direction: row;
@@ -183,7 +190,7 @@ nav button:hover {
 }
 
 .homeNotText {
-  background-color: rgba(94, 94, 94, 0.829);
+  background-color: rgba(78, 78, 78, 0.699);
   width: 800px;
   align-self: center;
   border-radius: 10px;
@@ -402,7 +409,7 @@ nav button:hover {
 }
 
 .create {
-  background-color: rgba(78, 78, 78, 0.562);
+  background-color: rgba(78, 78, 78, 0.753);
   width: 600px;
   align-self: center;
   border-radius: 10px;
@@ -416,6 +423,45 @@ nav button:hover {
   display: flex;
   flex-direction: column;
 }
+
+/* .createForm input {
+  background-color: red;
+} */
+
+/* .create Form input[type='checkbox']{
+   -webkit-appearance:
+  -moz-appearance: none;
+  -o-appearance: none;
+  background-color: red; 
+   outline: 2px solid lightblue; 
+   width: 18px !important;
+  height: 18px !important;
+  filter: brightness(1)
+  
+}  */
+
+.createForm input[type='checkbox'] {
+  height: 15px;
+  width: 15px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  outline: none;
+  transition-duration: 0.2s;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.createForm input[type='checkbox']:checked {
+  border: 2px solid #ffffff;
+  background-color: #000000;
+  
+}
+
+
 .create h1 {
   color: white;
   text-shadow: 0 0 10px rgb(0, 0, 0);
@@ -423,7 +469,7 @@ nav button:hover {
 
 .create label {
   color: white;
-  text-shadow: 0 0 10px rgb(0, 0, 0);
+  text-shadow: 0px 0px 6px rgb(0, 0, 0) !important;
 }
 
 .formFlex {
@@ -432,10 +478,24 @@ nav button:hover {
   justify-content: space-between;
 }
 
+
 .createForm button {
   width: 110px;
   align-self: center;
   margin-bottom: 8px;;
+  border-radius: 7px;
+}
+
+.createForm button:hover {
+  background-color: rgba(236, 236, 236, 0.562);
+}
+
+.name input {
+  border-radius: 5px;
+}
+
+.direction select {
+  border-radius: 5px;
 }
 
 .percent {
@@ -480,7 +540,7 @@ nav button:hover {
 } */
 
 .allTextExer {
-  background-color: rgba(94, 94, 94, 0.829);
+  background-color: rgba(78, 78, 78, 0.774);
   width: 800px;
   
   border-radius: 10px;

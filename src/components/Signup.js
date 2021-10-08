@@ -16,7 +16,7 @@ function Signup() {
       password,
     };
     await axios.post(`${process.env.REACT_APP_SERVER_HOSTNAME}/signup`, body);
-    toast.success("Signup success");
+    toast.success("Account created");
     history.push("/");
   };
 

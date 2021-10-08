@@ -88,7 +88,7 @@ const loggedInUser = useContext(LoggedUserConsumer)
 
               <form className="createForm" onSubmit={handleFormSubmit}>
 
-                <div className="formFlex">
+                <div className="formFlex name">
                   <label>Name: </label>
                   <input
                     maxlength="30"

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useEffect } from "react/cjs/react.development";
 
 let rand1;
 let randScale;
@@ -70,6 +71,12 @@ function Scale() {
   const [flash, setFlash] = useState("")
 
   const [checkScale, setCheckScale] = useState("");
+
+  useEffect(() => {
+    counter = 0;
+        correct = 0;
+        percent = null;
+  }, [])
 
 
   function randomize() {
