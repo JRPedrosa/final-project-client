@@ -87,17 +87,18 @@ function Scale() {
         correct = 0;
         percent = null;
 
-  }, [checkScale])
+  }, [])
 
 
   useEffect(() => {
 
     for (let i = 0; i < piano.length; i++) {   
     
-      piano[i].preload = "";   
+      // piano[i].preload = "";
+      piano[i].load()
   
   }
-  }, [])
+  }, [checkScale])
 
   function randomize() {
 
