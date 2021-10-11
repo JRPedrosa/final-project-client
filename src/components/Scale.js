@@ -160,28 +160,38 @@ function Scale() {
 
     if (repeat) {
       
-      console.log(`randScale: ${randScale} - Rand1: ${rand1} `)
+      // console.log(`randScale: ${randScale} - Rand1: ${rand1} `)
   
-      note1 = piano[rand1]
-      note2 = piano[rand1 + randScale[0]]
-      note3 = piano[rand1 + randScale[1]]
-      note4 = piano[rand1 + randScale[2]]
-      note5 = piano[rand1 + randScale[3]]
-      note6 = piano[rand1 + randScale[4]]
-      note7 = piano[rand1 + randScale[5]]
-      note8 = piano[rand1 + randScale[6]]
+      // note1 = piano[rand1]
+      // note2 = piano[rand1 + randScale[0]]
+      // note3 = piano[rand1 + randScale[1]]
+      // note4 = piano[rand1 + randScale[2]]
+      // note5 = piano[rand1 + randScale[3]]
+      // note6 = piano[rand1 + randScale[4]]
+      // note7 = piano[rand1 + randScale[5]]
+      // note8 = piano[rand1 + randScale[6]]
   
       let notes = [];
-      notes.push(note1, note2, note3, note4, note5, note6, note7, note8)
+
+      notes.push(
+        piano[rand1], 
+        piano[rand1 + randScale[0]], 
+        piano[rand1 + randScale[1]], 
+        piano[rand1 + randScale[2]], 
+        piano[rand1 + randScale[3]], 
+        piano[rand1 + randScale[4]], 
+        piano[rand1 + randScale[5]], 
+        piano[rand1 + randScale[6]]
+        )
   
-      notes[0].load()
-      notes[1].load()
-      notes[2].load()
-      notes[3].load()
-      notes[4].load()
-      notes[5].load()
-      notes[6].load()
-      notes[7].load()
+      // notes[0].load()
+      // notes[1].load()
+      // notes[2].load()
+      // notes[3].load()
+      // notes[4].load()
+      // notes[5].load()
+      // notes[6].load()
+      // notes[7].load()
   
       for (let i = 0; i < 8; i++) {   
           setTimeout(function(){
@@ -192,26 +202,34 @@ function Scale() {
 
     } else {
 
-      note1 = piano[rand1]
-      note2 = piano[rand1 + randScale[0]]
-      note3 = piano[rand1 + randScale[1]]
-      note4 = piano[rand1 + randScale[2]]
-      note5 = piano[rand1 + randScale[3]]
-      note6 = piano[rand1 + randScale[4]]
-      note7 = piano[rand1 + randScale[5]]
-      note8 = piano[rand1 + randScale[6]]
+      // note1 = piano[rand1]
+      // note2 = piano[rand1 + randScale[0]]
+      // note3 = piano[rand1 + randScale[1]]
+      // note4 = piano[rand1 + randScale[2]]
+      // note5 = piano[rand1 + randScale[3]]
+      // note6 = piano[rand1 + randScale[4]]
+      // note7 = piano[rand1 + randScale[5]]
+      // note8 = piano[rand1 + randScale[6]]
   
       let notes = [];
-      notes.push(note1, note2, note3, note4, note5, note6, note7, note8)
+
+      notes.push(piano[rand1], 
+        piano[rand1 + randScale[0]], 
+        piano[rand1 + randScale[1]], 
+        piano[rand1 + randScale[2]], 
+        piano[rand1 + randScale[3]], 
+        piano[rand1 + randScale[4]], 
+        piano[rand1 + randScale[5]], 
+        piano[rand1 + randScale[6]])
   
-      notes[0].load()
-      notes[1].load()
-      notes[2].load()
-      notes[3].load()
-      notes[4].load()
-      notes[5].load()
-      notes[6].load()
-      notes[7].load()
+      // notes[0].load()
+      // notes[1].load()
+      // notes[2].load()
+      // notes[3].load()
+      // notes[4].load()
+      // notes[5].load()
+      // notes[6].load()
+      // notes[7].load()
 
   
       //setTimeout(function(){
