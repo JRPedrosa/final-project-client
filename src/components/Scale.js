@@ -58,14 +58,14 @@ let piano = [
 // let note7 = new Audio()
 // let note8 = new Audio()
 
-let note1
-let note2 
-let note3
-let note4 
-let note5 
-let note6
-let note7 
-let note8 
+// let note1
+// let note2 
+// let note3
+// let note4 
+// let note5 
+// let note6
+// let note7 
+// let note8 
 
 
 function Scale() {
@@ -87,15 +87,17 @@ function Scale() {
         correct = 0;
         percent = null;
 
-        for (let i = 0; i < piano.length; i++) {   
+  }, [checkScale])
+
+
+  useEffect(() => {
+
+    for (let i = 0; i < piano.length; i++) {   
     
-          piano[i].preload = "";   
-      
-      }
-
-
+      piano[i].preload = "";   
+  
+  }
   }, [])
-
 
   function randomize() {
 
@@ -184,14 +186,14 @@ function Scale() {
         piano[rand1 + randScale[6]]
         )
   
-      // notes[0].load()
-      // notes[1].load()
-      // notes[2].load()
-      // notes[3].load()
-      // notes[4].load()
-      // notes[5].load()
-      // notes[6].load()
-      // notes[7].load()
+      notes[0].load()
+      notes[1].load()
+      notes[2].load()
+      notes[3].load()
+      notes[4].load()
+      notes[5].load()
+      notes[6].load()
+      notes[7].load()
   
       for (let i = 0; i < 8; i++) {   
           setTimeout(function(){
