@@ -202,6 +202,8 @@ function Scale() {
           }, i * 300);
       }
 
+      console.log(notes)
+
     } else {
 
       // note1 = piano[rand1]
@@ -224,14 +226,14 @@ function Scale() {
         piano[rand1 + randScale[5]], 
         piano[rand1 + randScale[6]])
   
-      // notes[0].load()
-      // notes[1].load()
-      // notes[2].load()
-      // notes[3].load()
-      // notes[4].load()
-      // notes[5].load()
-      // notes[6].load()
-      // notes[7].load()
+      notes[0].load()
+      notes[1].load()
+      notes[2].load()
+      notes[3].load()
+      notes[4].load()
+      notes[5].load()
+      notes[6].load()
+      notes[7].load()
 
   
       //setTimeout(function(){
@@ -246,7 +248,7 @@ function Scale() {
       // }, 1500);
 
 
-
+        console.log(notes)
 
     }
 
