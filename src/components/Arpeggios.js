@@ -195,7 +195,7 @@ function Arpeggio() {
         // notes[1].play()
         // notes[2].play()
 
-        setTimeout(function(){
+        // setTimeout(function(){
             
             for (let i = 0; i < 3; i++) { 
         
@@ -210,7 +210,7 @@ function Arpeggio() {
             }
             
             
-        }, 1500);
+        // }, 1500);
 
         
 

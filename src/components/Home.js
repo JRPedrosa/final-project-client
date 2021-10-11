@@ -52,16 +52,6 @@ function Home({loggedInUser}) {
          
          )
 
-
-
-
-
-
-
-      {/* <img id="homeImg" src="/pexels-freestocksorg-14548.jpg"/> */}
-
-
-
      
   
 }
