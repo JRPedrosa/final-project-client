@@ -70,6 +70,7 @@ let note8
 
 function Scale() {
   
+
   
   const [message, setMessage] = useState("");
 
@@ -82,9 +83,17 @@ function Scale() {
   const [checkScale, setCheckScale] = useState("");
 
   useEffect(() => {
-    counter = 0;
+        counter = 0;
         correct = 0;
         percent = null;
+
+        for (let i = 0; i < piano.length; i++) {   
+    
+          piano[i].preload = "";   
+      
+      }
+
+
   }, [])
 
 
