@@ -2,6 +2,9 @@
 
 <h3>Ear training app for seasoned and aspiring musicians.</h3>
 
-Final project for the Ironhack bootcamp. Using React, JavaScript, MongoDB, NodeJS, ExpressJS and CSS/HTML.
+Final project for the Ironhack bootcamp. 
+
+
+Using React, JavaScript, MongoDB, NodeJS, ExpressJS and CSS/HTML.
 
 
