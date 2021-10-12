@@ -147,12 +147,16 @@ function OneExerciseArpeggio(props) {
       notes[2].load()
       
   
-      for (let i = 0; i < 3; i++) {   
-          setTimeout(function(){
-              notes[i].play()
-              
-          }, i * 400);
-      }
+      setTimeout(function(){
+        
+        for (let i = 0; i < 3; i++) {   
+            setTimeout(function(){
+                notes[i].play()
+                
+            }, i * 400);
+        }
+        
+    }, 1000);
 
     } else {
 

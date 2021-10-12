@@ -155,12 +155,16 @@ function OneExerciseScale(props) {
       notes[6].load()
       notes[7].load()
   
-      for (let i = 0; i < 8; i++) {   
-          setTimeout(function(){
-              notes[i].play()
-              
-          }, i * 300);
-      }
+      setTimeout(function(){
+       
+        for (let i = 0; i < 8; i++) {   
+            setTimeout(function(){
+                notes[i].play()
+                
+            }, i * 300);
+        }
+        
+    }, 1000);
 
     } else {
 

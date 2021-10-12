@@ -156,18 +156,16 @@ function Arpeggio() {
         //   await notes[2].play()
     
         
-            
-            for (let i = 0; i < 3; i++) { 
+        setTimeout(function(){
         
-                //  notes[i].muted = false;
-        
-                setTimeout(function(){
-                    // notes[i].load()
-                    notes[i].play()
-                    
-                    
-                }, i * 400);
-            }
+          for (let i = 0; i < 3; i++) {   
+              setTimeout(function(){
+                  notes[i].play()
+                  
+              }, i * 400);
+          }
+          
+      }, 1000);
             
             
         
@@ -197,18 +195,16 @@ function Arpeggio() {
 
         // setTimeout(function(){
             
-            for (let i = 0; i < 3; i++) { 
+          setTimeout(function(){
         
-                //  notes[i].muted = false;
-        
+            for (let i = 0; i < 3; i++) {   
                 setTimeout(function(){
-                    // notes[i].load()
                     notes[i].play()
-                    
                     
                 }, i * 400);
             }
             
+        }, 1500);
             
         // }, 1500);
 

@@ -9,68 +9,58 @@ let correct = 0;
 let percent;
 
 let piano = [
-  new Audio("../2489__jobro__piano-ff/39172__jobro__piano-ff-025.wav"),
-  new Audio("../2489__jobro__piano-ff/39173__jobro__piano-ff-026.wav"),
-  new Audio("../2489__jobro__piano-ff/39174__jobro__piano-ff-027.wav"),
-  new Audio("../2489__jobro__piano-ff/39175__jobro__piano-ff-028.wav"),
-  new Audio("../2489__jobro__piano-ff/39176__jobro__piano-ff-029.wav"),
-  new Audio("../2489__jobro__piano-ff/39177__jobro__piano-ff-030.wav"),
-  new Audio("../2489__jobro__piano-ff/39178__jobro__piano-ff-031.wav"),
-  new Audio("../2489__jobro__piano-ff/39179__jobro__piano-ff-032.wav"),
-  new Audio("../2489__jobro__piano-ff/39180__jobro__piano-ff-033.wav"),
-  new Audio("../2489__jobro__piano-ff/39181__jobro__piano-ff-034.wav"),
-  new Audio("../2489__jobro__piano-ff/39182__jobro__piano-ff-035.wav"),
-  new Audio("../2489__jobro__piano-ff/39183__jobro__piano-ff-036.wav"),
-  new Audio("../2489__jobro__piano-ff/39184__jobro__piano-ff-037.wav"),
-  new Audio("../2489__jobro__piano-ff/39185__jobro__piano-ff-038.wav"),
-  new Audio("../2489__jobro__piano-ff/39186__jobro__piano-ff-039.wav"),
-  new Audio("../2489__jobro__piano-ff/39187__jobro__piano-ff-040.wav"),
-  new Audio("../2489__jobro__piano-ff/39188__jobro__piano-ff-041.wav"),
-  new Audio("../2489__jobro__piano-ff/39189__jobro__piano-ff-042.wav"),
-  new Audio("../2489__jobro__piano-ff/39190__jobro__piano-ff-043.wav"),
-  new Audio("../2489__jobro__piano-ff/39191__jobro__piano-ff-044.wav"),
-  new Audio("../2489__jobro__piano-ff/39193__jobro__piano-ff-045.wav"),
-  new Audio("../2489__jobro__piano-ff/39194__jobro__piano-ff-046.wav"),
-  new Audio("../2489__jobro__piano-ff/39195__jobro__piano-ff-047.wav"),
-  new Audio("../2489__jobro__piano-ff/39196__jobro__piano-ff-048.wav"),
-  new Audio("../2489__jobro__piano-ff/39197__jobro__piano-ff-049.wav"),
-  new Audio("../2489__jobro__piano-ff/39198__jobro__piano-ff-050.wav"),
-  new Audio("../2489__jobro__piano-ff/39199__jobro__piano-ff-051.wav"),
-  new Audio("../2489__jobro__piano-ff/39200__jobro__piano-ff-052.wav"),
-  new Audio("../2489__jobro__piano-ff/39201__jobro__piano-ff-053.wav"),
-  new Audio("../2489__jobro__piano-ff/39202__jobro__piano-ff-054.wav"),
-  new Audio("../2489__jobro__piano-ff/39203__jobro__piano-ff-055.wav"),
-  new Audio("../2489__jobro__piano-ff/39204__jobro__piano-ff-056.wav"),
-  new Audio("../2489__jobro__piano-ff/39205__jobro__piano-ff-057.wav"),
-  new Audio("../2489__jobro__piano-ff/39206__jobro__piano-ff-058.wav"),
-  new Audio("../2489__jobro__piano-ff/39207__jobro__piano-ff-059.wav"),
-  new Audio("../2489__jobro__piano-ff/39208__jobro__piano-ff-060.wav"),
-  new Audio("../2489__jobro__piano-ff/39209__jobro__piano-ff-061.wav"),
+  "../2489__jobro__piano-ff/39172__jobro__piano-ff-025.wav",
+  "../2489__jobro__piano-ff/39173__jobro__piano-ff-026.wav",
+  "../2489__jobro__piano-ff/39174__jobro__piano-ff-027.wav",
+  "../2489__jobro__piano-ff/39175__jobro__piano-ff-028.wav",
+  "../2489__jobro__piano-ff/39176__jobro__piano-ff-029.wav",
+  "../2489__jobro__piano-ff/39177__jobro__piano-ff-030.wav",
+  "../2489__jobro__piano-ff/39178__jobro__piano-ff-031.wav",
+  "../2489__jobro__piano-ff/39179__jobro__piano-ff-032.wav",
+  "../2489__jobro__piano-ff/39180__jobro__piano-ff-033.wav",
+  "../2489__jobro__piano-ff/39181__jobro__piano-ff-034.wav",
+  "../2489__jobro__piano-ff/39182__jobro__piano-ff-035.wav",
+  "../2489__jobro__piano-ff/39183__jobro__piano-ff-036.wav",
+  "../2489__jobro__piano-ff/39184__jobro__piano-ff-037.wav",
+  "../2489__jobro__piano-ff/39185__jobro__piano-ff-038.wav",
+  "../2489__jobro__piano-ff/39186__jobro__piano-ff-039.wav",
+  "../2489__jobro__piano-ff/39187__jobro__piano-ff-040.wav",
+  "../2489__jobro__piano-ff/39188__jobro__piano-ff-041.wav",
+  "../2489__jobro__piano-ff/39189__jobro__piano-ff-042.wav",
+  "../2489__jobro__piano-ff/39190__jobro__piano-ff-043.wav",
+  "../2489__jobro__piano-ff/39191__jobro__piano-ff-044.wav",
+  "../2489__jobro__piano-ff/39193__jobro__piano-ff-045.wav",
+  "../2489__jobro__piano-ff/39194__jobro__piano-ff-046.wav",
+  "../2489__jobro__piano-ff/39195__jobro__piano-ff-047.wav",
+  "../2489__jobro__piano-ff/39196__jobro__piano-ff-048.wav",
+  "../2489__jobro__piano-ff/39197__jobro__piano-ff-049.wav",
+  "../2489__jobro__piano-ff/39198__jobro__piano-ff-050.wav",
+  "../2489__jobro__piano-ff/39199__jobro__piano-ff-051.wav",
+  "../2489__jobro__piano-ff/39200__jobro__piano-ff-052.wav",
+  "../2489__jobro__piano-ff/39201__jobro__piano-ff-053.wav",
+  "../2489__jobro__piano-ff/39202__jobro__piano-ff-054.wav",
+  "../2489__jobro__piano-ff/39203__jobro__piano-ff-055.wav",
+  "../2489__jobro__piano-ff/39204__jobro__piano-ff-056.wav",
+  "../2489__jobro__piano-ff/39205__jobro__piano-ff-057.wav",
+  "../2489__jobro__piano-ff/39206__jobro__piano-ff-058.wav",
+  "../2489__jobro__piano-ff/39207__jobro__piano-ff-059.wav",
+  "../2489__jobro__piano-ff/39208__jobro__piano-ff-060.wav",
+  "../2489__jobro__piano-ff/39209__jobro__piano-ff-061.wav",
 ];
 
 
-// let note1 = new Audio()
-// let note2 = new Audio()
-// let note3 = new Audio()
-// let note4 = new Audio()
-// let note5 = new Audio()
-// let note6 = new Audio()
-// let note7 = new Audio()
-// let note8 = new Audio()
-
-// let note1
-// let note2 
-// let note3
-// let note4 
-// let note5 
-// let note6
-// let note7 
-// let note8 
+let note1 = new Audio()
+let note2 = new Audio()
+let note3 = new Audio()
+let note4 = new Audio()
+let note5 = new Audio()
+let note6 = new Audio()
+let note7 = new Audio()
+let note8 = new Audio()
 
 
 function Scale() {
   
-
   
   const [message, setMessage] = useState("");
 
@@ -83,22 +73,11 @@ function Scale() {
   const [checkScale, setCheckScale] = useState("");
 
   useEffect(() => {
-        counter = 0;
+    counter = 0;
         correct = 0;
         percent = null;
-
   }, [])
 
-
-  useEffect(() => {
-
-    for (let i = 0; i < piano.length; i++) {   
-    
-      // piano[i].preload = "";
-      piano[i].load()
-  
-  }
-  }, [checkScale])
 
   function randomize() {
 
@@ -163,29 +142,19 @@ function Scale() {
 
     if (repeat) {
       
-      // console.log(`randScale: ${randScale} - Rand1: ${rand1} `)
+      console.log(`randScale: ${randScale} - Rand1: ${rand1} `)
   
-      // note1 = piano[rand1]
-      // note2 = piano[rand1 + randScale[0]]
-      // note3 = piano[rand1 + randScale[1]]
-      // note4 = piano[rand1 + randScale[2]]
-      // note5 = piano[rand1 + randScale[3]]
-      // note6 = piano[rand1 + randScale[4]]
-      // note7 = piano[rand1 + randScale[5]]
-      // note8 = piano[rand1 + randScale[6]]
+      note1 = new Audio(piano[rand1])
+      note2 = new Audio(piano[rand1 + randScale[0]])
+      note3 = new Audio(piano[rand1 + randScale[1]])
+      note4 = new Audio(piano[rand1 + randScale[2]])
+      note5 = new Audio(piano[rand1 + randScale[3]])
+      note6 = new Audio(piano[rand1 + randScale[4]])
+      note7 = new Audio(piano[rand1 + randScale[5]])
+      note8 = new Audio(piano[rand1 + randScale[6]])
   
       let notes = [];
-
-      notes.push(
-        piano[rand1], 
-        piano[rand1 + randScale[0]], 
-        piano[rand1 + randScale[1]], 
-        piano[rand1 + randScale[2]], 
-        piano[rand1 + randScale[3]], 
-        piano[rand1 + randScale[4]], 
-        piano[rand1 + randScale[5]], 
-        piano[rand1 + randScale[6]]
-        )
+      notes.push(note1, note2, note3, note4, note5, note6, note7, note8)
   
       notes[0].load()
       notes[1].load()
@@ -196,36 +165,28 @@ function Scale() {
       notes[6].load()
       notes[7].load()
   
+      setTimeout(function(){
       for (let i = 0; i < 8; i++) {   
           setTimeout(function(){
               notes[i].play()
               
           }, i * 300);
       }
-
-      console.log(notes)
+    }, 1000);
 
     } else {
 
-      // note1 = piano[rand1]
-      // note2 = piano[rand1 + randScale[0]]
-      // note3 = piano[rand1 + randScale[1]]
-      // note4 = piano[rand1 + randScale[2]]
-      // note5 = piano[rand1 + randScale[3]]
-      // note6 = piano[rand1 + randScale[4]]
-      // note7 = piano[rand1 + randScale[5]]
-      // note8 = piano[rand1 + randScale[6]]
+      note1 = new Audio(piano[rand1])
+      note2 = new Audio(piano[rand1 + randScale[0]])
+      note3 = new Audio(piano[rand1 + randScale[1]])
+      note4 = new Audio(piano[rand1 + randScale[2]])
+      note5 = new Audio(piano[rand1 + randScale[3]])
+      note6 = new Audio(piano[rand1 + randScale[4]])
+      note7 = new Audio(piano[rand1 + randScale[5]])
+      note8 = new Audio(piano[rand1 + randScale[6]])
   
       let notes = [];
-
-      notes.push(piano[rand1], 
-        piano[rand1 + randScale[0]], 
-        piano[rand1 + randScale[1]], 
-        piano[rand1 + randScale[2]], 
-        piano[rand1 + randScale[3]], 
-        piano[rand1 + randScale[4]], 
-        piano[rand1 + randScale[5]], 
-        piano[rand1 + randScale[6]])
+      notes.push(note1, note2, note3, note4, note5, note6, note7, note8)
   
       notes[0].load()
       notes[1].load()
@@ -237,7 +198,7 @@ function Scale() {
       notes[7].load()
 
   
-      //setTimeout(function(){
+      setTimeout(function(){
         
         for (let i = 0; i < 8; i++) {   
             setTimeout(function(){
@@ -246,10 +207,10 @@ function Scale() {
             }, i * 300);
         }
         
-      // }, 1500);
+      }, 1500);
 
 
-        console.log(notes)
+
 
     }
 
