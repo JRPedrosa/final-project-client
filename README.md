@@ -1,6 +1,6 @@
-<a href="https://ear-perfect.netlify.app/"><h1>Ear Perfect 🎵</h1></a>
+<a href="https://ear-perfect.netlify.app/"><h1>Ear Perfect</h1></a>
 
-<h3>Ear training app for seasoned and aspiring musicians.</h3>
+<h3>Ear training app for seasoned and aspiring musicians 🎵</h3>
 
 Final project for the Ironhack bootcamp. 
 
