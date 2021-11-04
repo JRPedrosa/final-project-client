@@ -36,30 +36,24 @@ function AllExercises() {
         await axios.delete(
           `${process.env.REACT_APP_SERVER_HOSTNAME}/interval/${id}`
         );
-        // toast.info("Exercise deleted")
         setDeleteInterval(!deleteInterval);
         
-        // history.push("/exercises");
       };
 
       const handleDeleteScale = async (id) => {
         await axios.delete(
           `${process.env.REACT_APP_SERVER_HOSTNAME}/scale/${id}`
         );
-        // toast.info("Exercise deleted")
         setDeleteInterval(!deleteInterval);
         
-        // history.push("/exercises");
       };
 
       const handleDeleteArpeggio = async (id) => {
         await axios.delete(
           `${process.env.REACT_APP_SERVER_HOSTNAME}/arpeggio/${id}`
         );
-        // toast.info("Exercise deleted")
         setDeleteInterval(!deleteInterval);
         
-        // history.push("/exercises");
       };
 
     
@@ -90,8 +84,6 @@ function AllExercises() {
                             </div>
                             <div></div>
                             <div></div>
-                            {/* <div></div>
-                            <div></div> */}
 
 
                             <div className="allTextExer">
