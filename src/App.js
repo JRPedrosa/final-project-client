@@ -98,29 +98,42 @@ function App() {
         }} />
         
 
-         {/* component={Home} />     */}
         <Route 
           exact path={"/interval"}
           render={() => {
             return <Interval piano={piano} />
           }} />
+
         <PrivateRoute 
           exact path={"/exercises/:id"} 
-          render={() => {
-            return <OneExercise piano={piano} />
+          render={(props) => {
+            return <OneExercise piano={piano} {...props} />
           }} />
+
         <Route 
           exact path={"/scale"} 
           render={() => {
             return <Scale piano={piano} />
           }} />
-        <PrivateRoute exact path={"/scales/:id"} component={OneExerciseScale} />
+
+        <PrivateRoute 
+          exact path={"/scales/:id"} 
+          render={(props) => {
+            return <OneExerciseScale piano={piano} {...props} />
+          }} />
+
         <Route 
           exact path={"/arpeggio"} 
           render={() => {
             return <Arpeggio piano={piano} />
           }} />
-        <PrivateRoute exact path={"/arpeggios/:id"} component={OneExerciseArpeggio} />
+
+        <PrivateRoute 
+          exact path={"/arpeggios/:id"} 
+          render={(props) => {
+            return <OneExerciseArpeggio piano={piano} {...props} />
+          }} />
+
         <PrivateRoute exact path={"/create-interval"} component={CreateInterval} />
         <PrivateRoute exact path={"/create-scales"} component={CreateScale} />
         <PrivateRoute exact path={"/create-arpeggio"} component={CreateArpeggio} />

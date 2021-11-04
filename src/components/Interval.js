@@ -8,46 +8,6 @@ let counter = 0;
 let correct = 0;
 let percent;
 
-// let piano = [
-//   "../2489__jobro__piano-ff/39172__jobro__piano-ff-025.wav",
-//   "../2489__jobro__piano-ff/39173__jobro__piano-ff-026.wav",
-//   "../2489__jobro__piano-ff/39174__jobro__piano-ff-027.wav",
-//   "../2489__jobro__piano-ff/39175__jobro__piano-ff-028.wav",
-//   "../2489__jobro__piano-ff/39176__jobro__piano-ff-029.wav",
-//   "../2489__jobro__piano-ff/39177__jobro__piano-ff-030.wav",
-//   "../2489__jobro__piano-ff/39178__jobro__piano-ff-031.wav",
-//   "../2489__jobro__piano-ff/39179__jobro__piano-ff-032.wav",
-//   "../2489__jobro__piano-ff/39180__jobro__piano-ff-033.wav",
-//   "../2489__jobro__piano-ff/39181__jobro__piano-ff-034.wav",
-//   "../2489__jobro__piano-ff/39182__jobro__piano-ff-035.wav",
-//   "../2489__jobro__piano-ff/39183__jobro__piano-ff-036.wav",
-//   "../2489__jobro__piano-ff/39184__jobro__piano-ff-037.wav",
-//   "../2489__jobro__piano-ff/39185__jobro__piano-ff-038.wav",
-//   "../2489__jobro__piano-ff/39186__jobro__piano-ff-039.wav",
-//   "../2489__jobro__piano-ff/39187__jobro__piano-ff-040.wav",
-//   "../2489__jobro__piano-ff/39188__jobro__piano-ff-041.wav",
-//   "../2489__jobro__piano-ff/39189__jobro__piano-ff-042.wav",
-//   "../2489__jobro__piano-ff/39190__jobro__piano-ff-043.wav",
-//   "../2489__jobro__piano-ff/39191__jobro__piano-ff-044.wav",
-//   "../2489__jobro__piano-ff/39193__jobro__piano-ff-045.wav",
-//   "../2489__jobro__piano-ff/39194__jobro__piano-ff-046.wav",
-//   "../2489__jobro__piano-ff/39195__jobro__piano-ff-047.wav",
-//   "../2489__jobro__piano-ff/39196__jobro__piano-ff-048.wav",
-//   "../2489__jobro__piano-ff/39197__jobro__piano-ff-049.wav",
-//   "../2489__jobro__piano-ff/39198__jobro__piano-ff-050.wav",
-//   "../2489__jobro__piano-ff/39199__jobro__piano-ff-051.wav",
-//   "../2489__jobro__piano-ff/39200__jobro__piano-ff-052.wav",
-//   "../2489__jobro__piano-ff/39201__jobro__piano-ff-053.wav",
-//   "../2489__jobro__piano-ff/39202__jobro__piano-ff-054.wav",
-//   "../2489__jobro__piano-ff/39203__jobro__piano-ff-055.wav",
-//   "../2489__jobro__piano-ff/39204__jobro__piano-ff-056.wav",
-//   "../2489__jobro__piano-ff/39205__jobro__piano-ff-057.wav",
-//   "../2489__jobro__piano-ff/39206__jobro__piano-ff-058.wav",
-//   "../2489__jobro__piano-ff/39207__jobro__piano-ff-059.wav",
-//   "../2489__jobro__piano-ff/39208__jobro__piano-ff-060.wav",
-//   "../2489__jobro__piano-ff/39209__jobro__piano-ff-061.wav",
-// ];
-
 let note1;
 let note2;
 
@@ -83,51 +43,42 @@ function Interval( {piano} ) {
   }
 
 
-  // useEffect(() => {
-  //   setAnimate(!animate);
-  // }, [test])
-
-
-   function play(repeat) {
+  function play(repeat) {
 
     if (repeat) {
       
       note1 = new Audio(piano[rand1])
       note2 = new Audio(piano[rand2])
-  
+
       note1.load()
       note2.load()
-  
+
       note1.play()
       setTimeout(function(){
-         note1.pause();
-          //note1.play()
+        note1.pause();
         note2.play(); 
         }, 1000);
     } else {
 
       note1 = new Audio(piano[rand1])
       note2 = new Audio(piano[rand2])
-  
+
       note1.load()
       note2.load()
-  
+
 
       setTimeout(function(){
         
         note1.play()
         setTimeout(function(){
-           note1.pause();
-            //note1.play()
+          note1.pause();
           note2.play(); 
           }, 800);
 
-       }, 1000);
+        }, 1000);
 
 
     }
-
-    
 
     // console.log(`Interval: ${randInterval} - Rand1: ${rand1} - rand2: ${rand2} `)
   }
@@ -153,9 +104,7 @@ function Interval( {piano} ) {
     } else { 
 
       counter++;
-      // if (correct > 0) {
-      //   correct--;
-      // }
+
       percent = Math.floor((correct / counter) * 100);
       console.log(`Counter: ${counter} -- Correct: ${correct} -- Percent: ${percent}`)
       setAnimate(!animate);
@@ -216,9 +165,9 @@ function Interval( {piano} ) {
               <button key={Math.random()}  onClick={() => check(7)} className={(flash === 7 ? "right" : undefined) || (flash !== 7 && checkNum === 7 ? " wrong" : undefined)} value="7">Perfect Fifth</button>
               <button key={Math.random()}  onClick={() => check(8)} className={(flash === 8 ? "right" : undefined) || (flash !== 8 && checkNum === 8 ? " wrong" : undefined)} value="8">Minor Sixth</button>
               <button key={Math.random()}  onClick={() => check(9)} className={(flash === 9 ? "right" : undefined) || (flash !== 9 && checkNum === 9 ? " wrong" : undefined)} value="9">Major Sixth</button>
-              <button key={Math.random()} onClick={() => check(10)} className={(flash === 10 ? "right" : undefined) || (flash !== 10 && checkNum === 10 ? " wrong" : undefined)} value="10">Minor Seventh</button>
-              <button key={Math.random()} onClick={() => check(11)} className={(flash === 11 ? "right" : undefined) || (flash !== 11 && checkNum === 11 ? " wrong" : undefined)} value="11">Major Seventh</button>
-              <button key={Math.random()} onClick={() => check(12)} className={(flash === 12 ? "right" : undefined) || (flash !== 12 && checkNum === 12 ? " wrong" : undefined)} value="12">Octave</button>
+              <button key={Math.random()}  onClick={() => check(10)} className={(flash === 10 ? "right" : undefined) || (flash !== 10 && checkNum === 10 ? " wrong" : undefined)} value="10">Minor Seventh</button>
+              <button key={Math.random()}  onClick={() => check(11)} className={(flash === 11 ? "right" : undefined) || (flash !== 11 && checkNum === 11 ? " wrong" : undefined)} value="11">Major Seventh</button>
+              <button key={Math.random()}  onClick={() => check(12)} className={(flash === 12 ? "right" : undefined) || (flash !== 12 && checkNum === 12 ? " wrong" : undefined)} value="12">Octave</button>
 
             </div>
             
